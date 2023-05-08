@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run wdio",
-    "wdio": "wdio run ./wdio.conf.js"
-  },
+    "clean": "rimraf ./allure-report ./allure-results",
+    "wdio": "wdio run wdio.conf.js",
+    "test": "npm run clean && wdio"
+},
   "author": "",
   "license": "ISC",
   "dependencies": {
