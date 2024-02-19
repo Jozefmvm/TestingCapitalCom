@@ -1,21 +1,21 @@
 const { BasePage } = require('../BasePage');
 
 
-class Header extends BasePage{
+class Header extends BasePage {
 
 
-    get logoLinkHeader(){
+    get logoLinkHeader() {
         return $('.gI.gCenter.gXs .cc-header__logo');
     }
 
 
-    get educationLinkHeader(){
-        return $('//*[@class="cc-nav__link cc-nav__link--lvl1 " and contains (text(), "Education")]');
+    get educationLinkHeader() {
+        return $('//*[@class="cc-nav__link cc-nav__link--lvl1 js-analyticsClick" and contains (text(), "Образование")]');
     }
 
 
-    async ClickToElement (element){
-        await element.waitForClickable({ timeout:4000 });
+    async ClickToElement(element) {
+        await element.waitForClickable({ timeout: 5000 });
         await element.click()
     }
 }

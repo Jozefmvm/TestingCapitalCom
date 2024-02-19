@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Feb 13 22:01:59 MSK 2024","Tue Feb 13 22:02:00 MSK 2024","996","","Header testing","","","","Should be appropriate link in browser line after click on Education ""https://capital.com/learn-to-trade""",""
+"passed","Tue Feb 13 22:01:53 MSK 2024","Tue Feb 13 22:01:56 MSK 2024","3042","","Header testing","","","","""before all"" hook for Header testing",""
+"passed","Mon Feb 19 20:25:22 MSK 2024","Mon Feb 19 20:25:25 MSK 2024","3276","","Header testing","","","","""before all"" hook for Header testing",""
+"passed","Tue Feb 13 22:01:56 MSK 2024","Tue Feb 13 22:01:59 MSK 2024","2675","","Header testing","","","","Should be appropriate link in browser line after click on logo ""https://capital.com/""",""
+"failed","Mon Feb 19 20:25:25 MSK 2024","Mon Feb 19 20:25:26 MSK 2024","917","","Header testing","","","","Should be appropriate link in browser line after click on logo ""https://capital.com/""",""
+"passed","Mon Feb 19 20:25:26 MSK 2024","Mon Feb 19 20:25:27 MSK 2024","999","","Header testing","","","","Should be appropriate link in browser line after click on Education ""https://capital.com/learn-to-trade""",""
