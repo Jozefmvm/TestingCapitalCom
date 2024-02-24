@@ -10,6 +10,7 @@ describe ('Header testing', function() {
     })
 
 
+
     it ('Should be appropriate link in browser line after click on logo "https://capital.com/"', async () => {
         await pageFactory.header.ClickToElement(pageFactory.header.logoLinkHeader);
         const title = await browser.getUrl();
@@ -21,6 +22,13 @@ describe ('Header testing', function() {
         await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
         const title = await browser.getUrl();
         await expect(title).toEqual('https://capital.com/ru/learn-to-trade');
+    })
+
+
+    it ('Should be appropriate link in browser line after change country "https://capital.com/ru/learn-to-trade?country=by"', async () => {
+        await pageFactory.header.SelectCountry();
+        const title = await browser.getUrl();
+        await expect(title).toEqual('https://capital.com/ru/learn-to-trade?country=by');
     })
 
 
