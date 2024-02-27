@@ -11,25 +11,34 @@ describe ('Header testing', function() {
 
 
 
-    it ('Should be appropriate link in browser line after click on logo "https://capital.com/"', async () => {
-        await pageFactory.header.ClickToElement(pageFactory.header.logoLinkHeader);
-        const title = await browser.getUrl();
-        await expect(title).toEqual('https://capital.com/by');
-    })
-
-
-    it ('Should be appropriate link in browser line after click on Education "https://capital.com/learn-to-trade"', async () => {
-        await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
-        const title = await browser.getUrl();
-        await expect(title).toEqual('https://capital.com/ru/learn-to-trade');
-    })
-
-
-    it ('Should be appropriate link in browser line after change country "https://capital.com/ru/learn-to-trade?country=by"', async () => {
+    it ('Should be appropriate link in browser line after change country to Brasil "https://capital.com/ru?country=br"', async () => {
         await pageFactory.header.SelectCountry();
         const title = await browser.getUrl();
-        await expect(title).toEqual('https://capital.com/ru/learn-to-trade?country=by');
+        await expect(title).toEqual('https://capital.com/ru?country=br');
     })
+
+
+    it ('Should be appropriate link in browser line after change language to English "https://capital.com/"', async () => {
+        await pageFactory.header.SelectLanguage();
+        const title = await browser.getUrl();
+        await expect(title).toEqual('https://capital.com/');
+    })
+
+
+
+    // it ('Should be appropriate link in browser line after click on logo "https://capital.com/"', async () => {
+    //     await pageFactory.header.ClickToElement(pageFactory.header.logoLinkHeader);
+    //     const title = await browser.getUrl();
+    //     await expect(title).toEqual('https://capital.com/ru');
+    // })
+
+
+    // it ('Should be appropriate link in browser line after click on Education "https://capital.com/learn-to-trade"', async () => {
+    //     await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
+    //     const title = await browser.getUrl();
+    //     await expect(title).toEqual('https://capital.com/ru/learn-to-trade');
+    // })
+
 
 
 

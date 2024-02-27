@@ -23,12 +23,14 @@ class Header extends BasePage {
         return $('.fieldDropdown__control.fieldDropdown__control--hidden');
     }
 
-
+//it is necessary to improve
     get nameCountry(){
-        return $('//*[@class="js-analyticsClick" and @data-type="nav_country_belarus"]');
+        return $('//*[@class="js-analyticsClick" and @data-type="nav_country_brazil"]');
     }
-
-
+//it is necessary to improve
+    get languageEn(){
+        return $('//*[@class="js-langName" and contains (text(), "English")]');
+    }
 
 
     async ClickToElement(element) {
@@ -42,6 +44,14 @@ class Header extends BasePage {
         await this.changeCountry.click();
         await this.nameCountry.click();
     }
+
+    async SelectLanguage(){
+        await this.changeCountryAndLanguage.click();
+        await this.languageEn.click();
+    }
+
+
+
 
 
 }
