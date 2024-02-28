@@ -24,12 +24,17 @@ class Header extends BasePage {
     }
 
 //it is necessary to improve
-    get nameCountry(){
-        return $('//*[@class="js-analyticsClick" and @data-type="nav_country_brazil"]');
+    get brazilCountry(){
+        return $('//*[@class="gI gXs gCenter js-switchCountry" and @data-country="br"]');
     }
 //it is necessary to improve
     get languageEn(){
         return $('//*[@class="js-langName" and contains (text(), "English")]');
+    }
+
+
+    get licence(){
+        return $('#licenseMessageSpan');
     }
 
 
@@ -39,15 +44,14 @@ class Header extends BasePage {
     }
 
 
-    async SelectCountry(){
+    async SelectCountryAndLanguage(country, language){
         await this.changeCountryAndLanguage.click();
         await this.changeCountry.click();
-        await this.nameCountry.click();
-    }
-
-    async SelectLanguage(){
+        await country.waitForClickable({timeout:3000});
+        await country.click();
         await this.changeCountryAndLanguage.click();
-        await this.languageEn.click();
+        await language.waitForClickable({timeout:3000});
+        await language.click();
     }
 
 

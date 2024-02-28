@@ -1,4 +1,3 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Tue Feb 27 22:49:38 MSK 2024","Tue Feb 27 22:49:40 MSK 2024","1878","","Header testing","","","","""before all"" hook for Header testing",""
-"passed","Tue Feb 27 22:49:41 MSK 2024","Tue Feb 27 22:49:42 MSK 2024","673","","Header testing","","","","Should be appropriate link in browser line after change language to English ""https://capital.com/""",""
-"passed","Tue Feb 27 22:49:40 MSK 2024","Tue Feb 27 22:49:41 MSK 2024","1169","","Header testing","","","","Should be appropriate link in browser line after change country to Brasil ""https://capital.com/ru?country=br""",""
+"passed","Wed Feb 28 22:33:49 MSK 2024","Wed Feb 28 22:33:53 MSK 2024","4588","","Header testing","","","","Should be appropriate link in browser line after change country to Brasil ""https://capital.com/ru?country=br""",""
+"passed","Wed Feb 28 22:33:46 MSK 2024","Wed Feb 28 22:33:49 MSK 2024","2652","","Header testing","","","","""before all"" hook for Header testing",""

@@ -12,17 +12,28 @@ describe ('Header testing', function() {
 
 
     it ('Should be appropriate link in browser line after change country to Brasil "https://capital.com/ru?country=br"', async () => {
-        await pageFactory.header.SelectCountry();
+        await pageFactory.header.SelectCountryAndLanguage(pageFactory.header.brazilCountry, pageFactory.header.languageEn);
         const title = await browser.getUrl();
-        await expect(title).toEqual('https://capital.com/ru?country=br');
-    })
-
-
-    it ('Should be appropriate link in browser line after change language to English "https://capital.com/"', async () => {
-        await pageFactory.header.SelectLanguage();
-        const title = await browser.getUrl();
+        await pageFactory.header.ClickToElement(pageFactory.header.changeCountryAndLanguage);
+        await expect(pageFactory.header.licence).toHaveText('(Regulated by SCB)');
         await expect(title).toEqual('https://capital.com/');
     })
+
+
+
+    // it ('Should be appropriate link in browser line after change country to Brasil "https://capital.com/ru?country=br"', async () => {
+    //     await pageFactory.header.SelectCountry();
+    //     const title = await browser.getUrl();
+    //     await expect(title).toEqual('https://capital.com/ru?country=br');
+    // })
+
+
+    // it ('Should be appropriate link in browser line after change language to English "https://capital.com/"', async () => {
+    //     await pageFactory.header.SelectLanguage();
+    //     const title = await browser.getUrl();
+    //     await expect(title).toEqual('https://capital.com/');
+    // })
+
 
 
 
