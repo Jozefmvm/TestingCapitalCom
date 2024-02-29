@@ -10,7 +10,7 @@ class Header extends BasePage {
 
 
     get educationLinkHeader() {
-        return $('//*[@class="cc-nav__link cc-nav__link--lvl1 js-analyticsClick" and contains (text(), "Образование")]');
+        return $('//*[@href="https://capital.com/learn-to-trade" and @data-type="nav_id96"]');
     }
 
 
@@ -35,6 +35,11 @@ class Header extends BasePage {
 
     get licence(){
         return $('#licenseMessageSpan');
+    }
+
+
+    get allTabsFromHeader(){
+        return $$('.cc-nav__item js-navLink');
     }
 
 

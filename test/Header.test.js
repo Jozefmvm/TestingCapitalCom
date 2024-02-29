@@ -11,13 +11,20 @@ describe ('Header testing', function() {
 
 
 
-    it ('Should be appropriate link in browser line after change country to Brasil "https://capital.com/ru?country=br"', async () => {
+    it ('Should be appropriate link in browser line after change country to Brasil and licence text on page "https://capital.com/ru?country=br"', async () => {
         await pageFactory.header.SelectCountryAndLanguage(pageFactory.header.brazilCountry, pageFactory.header.languageEn);
         const title = await browser.getUrl();
         await pageFactory.header.ClickToElement(pageFactory.header.changeCountryAndLanguage);
         await expect(pageFactory.header.licence).toHaveText('(Regulated by SCB)');
         await expect(title).toEqual('https://capital.com/');
     })
+
+
+    // it ('Should be appropriate array from hader on major page', async () => {
+    //     const array = await pageFactory.header.allTabsFromHeader;
+    //     console.log(array);
+
+    // })
 
 
 
@@ -44,11 +51,11 @@ describe ('Header testing', function() {
     // })
 
 
-    // it ('Should be appropriate link in browser line after click on Education "https://capital.com/learn-to-trade"', async () => {
-    //     await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
-    //     const title = await browser.getUrl();
-    //     await expect(title).toEqual('https://capital.com/ru/learn-to-trade');
-    // })
+    it ('Should be appropriate link in browser line after click on Education "https://capital.com/learn-to-trade"', async () => {
+        await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
+        const title = await browser.getUrl();
+        await expect(title).toEqual('https://capital.com/learn-to-trade');
+    })
 
 
 

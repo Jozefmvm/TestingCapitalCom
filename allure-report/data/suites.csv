@@ -1,3 +1,4 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Wed Feb 28 22:33:49 MSK 2024","Wed Feb 28 22:33:53 MSK 2024","4588","","Header testing","","","","Should be appropriate link in browser line after change country to Brasil ""https://capital.com/ru?country=br""",""
-"passed","Wed Feb 28 22:33:46 MSK 2024","Wed Feb 28 22:33:49 MSK 2024","2652","","Header testing","","","","""before all"" hook for Header testing",""
+"passed","Thu Feb 29 22:15:54 MSK 2024","Thu Feb 29 22:15:57 MSK 2024","2746","","Header testing","","","","""before all"" hook for Header testing",""
+"passed","Thu Feb 29 22:15:57 MSK 2024","Thu Feb 29 22:16:01 MSK 2024","3977","","Header testing","","","","Should be appropriate link in browser line after change country to Brasil and licence text on page ""https://capital.com/ru?country=br""",""
+"passed","Thu Feb 29 22:16:01 MSK 2024","Thu Feb 29 22:16:04 MSK 2024","2692","","Header testing","","","","Should be appropriate link in browser line after click on Education ""https://capital.com/learn-to-trade""",""
