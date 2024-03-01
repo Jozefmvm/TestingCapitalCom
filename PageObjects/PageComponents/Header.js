@@ -10,7 +10,7 @@ class Header extends BasePage {
 
 
     get educationLinkHeader() {
-        return $('//*[@href="https://capital.com/learn-to-trade" and @data-type="nav_id96"]');
+        return $('[data-type="nav_id96"]');
     }
 
 
@@ -25,11 +25,15 @@ class Header extends BasePage {
 
 //it is necessary to improve
     get brazilCountry(){
-        return $('//*[@class="gI gXs gCenter js-switchCountry" and @data-country="br"]');
+        return $('[data-country="br"]');
     }
 //it is necessary to improve
     get languageEn(){
-        return $('//*[@class="js-langName" and contains (text(), "English")]');
+        return $('[class="iconMd flagMin flagMin--gb"]');
+    }
+
+    get languageRu(){
+        return $('[class="iconMd flagMin flagMin--ru"]')
     }
 
 
@@ -39,7 +43,11 @@ class Header extends BasePage {
 
 
     get allTabsFromHeader(){
-        return $$('.cc-nav__item js-navLink');
+        return $$('[data-type="nav_id2"], [data-type="nav_id96"], [data-type="nav_id3"], [data-type="nav_id10"], [data-type="nav_id16"]');
+    }
+
+    get allCountries(){
+        return $$('[class="gI gXs gCenter js-switchCountry"]');
     }
 
 
