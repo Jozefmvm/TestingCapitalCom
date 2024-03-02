@@ -15,7 +15,7 @@ class Header extends BasePage {
 
 
     get changeCountryAndLanguage(){
-        return $('.licLangSw__btn.gI.gCenter.gXs.js-licLangSwBtn.js-countries');
+        return $('[class="licLangSw__btn gI gCenter gXs js-licLangSwBtn js-countries"]');
     }
 
 
@@ -58,12 +58,15 @@ class Header extends BasePage {
 
 
     async SelectCountryAndLanguage(country, language){
+        await this.changeCountryAndLanguage.waitForClickable({ timeout:5000 });
         await this.changeCountryAndLanguage.click();
-        await this.changeCountry.click();
-        await country.waitForClickable({timeout:3000});
+        await this.changeCountry.waitForClickable({ timeout:5000 });
+        await this.changeCountry.click()
+        await country.waitForClickable({ timeout:5000 });
         await country.click();
-        await this.changeCountryAndLanguage.click();
-        await language.waitForClickable({timeout:3000});
+        await this.changeCountryAndLanguage.waitForClickable({ timeout:5000 });
+        await this.changeCountryAndLanguage.click()
+        await language.waitForClickable({ timeout:5000 });
         await language.click();
     }
 

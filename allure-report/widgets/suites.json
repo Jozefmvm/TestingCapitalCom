@@ -1,1 +1,1 @@
-{"total":1,"items":[{"uid":"313db175a3770b806117501080b89052","name":"Header testing","statistic":{"failed":0,"broken":0,"skipped":0,"passed":4,"unknown":0,"total":4}}]}
+{"total":2,"items":[{"uid":"313db175a3770b806117501080b89052","name":"Header testing","statistic":{"failed":0,"broken":0,"skipped":0,"passed":4,"unknown":0,"total":4}},{"uid":"b7f7d6f9e19b0ea0aec5d9403f859e8c","name":"Search component testing","statistic":{"failed":0,"broken":0,"skipped":0,"passed":3,"unknown":0,"total":3}}]}
