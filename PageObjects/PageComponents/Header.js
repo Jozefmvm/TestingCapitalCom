@@ -15,19 +15,19 @@ class Header extends BasePage {
 
 
     get changeCountryAndLanguage(){
-        return $('[class="licLangSw__btn gI gCenter gXs js-licLangSwBtn js-countries"]');
+        return $('.licLangSw__btn.gI.gCenter.gXs.js-licLangSwBtn.js-countries');
     }
 
 
     get changeCountry(){
-        return $('.fieldDropdown__control.fieldDropdown__control--hidden');
+        return $('.fieldDropdown.fieldDropdown--filter.fieldDropdown--lg.js-fieldDropdownFilter');
     }
 
-//it is necessary to improve
+
     get brazilCountry(){
         return $('[data-country="br"]');
     }
-//it is necessary to improve
+
     get languageEn(){
         return $('[class="iconMd flagMin flagMin--gb"]');
     }
@@ -58,15 +58,15 @@ class Header extends BasePage {
 
 
     async SelectCountryAndLanguage(country, language){
-        await this.changeCountryAndLanguage.waitForClickable({ timeout:5000 });
+        await this.changeCountryAndLanguage.waitForDisplayed({ timeout: 10000 });
         await this.changeCountryAndLanguage.click();
-        await this.changeCountry.waitForClickable({ timeout:5000 });
+        await this.changeCountry.waitForDisplayed({ timeout: 5000 });
         await this.changeCountry.click()
-        await country.waitForClickable({ timeout:5000 });
+        await country.waitForDisplayed({ timeout:5000 });
         await country.click();
-        await this.changeCountryAndLanguage.waitForClickable({ timeout:5000 });
+        await this.changeCountryAndLanguage.waitForDisplayed({ timeout:5000 });
         await this.changeCountryAndLanguage.click()
-        await language.waitForClickable({ timeout:5000 });
+        await language.waitForDisplayed({ timeout: 5000 });
         await language.click();
     }
 
