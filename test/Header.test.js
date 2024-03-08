@@ -20,7 +20,6 @@ describe ('Header testing', function() {
     })
 
 
-
     it ('Should be appropriate array size  hader on major page', async () => {
         const array = await pageFactory.header.allTabsFromHeader;
         await expect(array).toBeElementsArrayOfSize(5);
@@ -33,6 +32,21 @@ describe ('Header testing', function() {
         const title = await browser.getUrl();
         await expect(title).toEqual('https://capital.com/learn-to-trade');
     })
+
+
+    // let variantOfLicence = [
+    //     {country: 'pageFactory.header.brazilCountry', language: 'pageFactory.header.languageEn'},
+    //     {country: 'pageFactory.header.spainCountry', language: 'pageFactory.header.languageEn'}
+    // ];
+
+
+    // variantOfLicence.forEach(({country, language})=>{
+    //     it ('dddd', async ()=>{
+    //         await pageFactory.header.SelectCountryAndLanguage(country,language);
+
+    //     })
+    // })
+
 
 
 

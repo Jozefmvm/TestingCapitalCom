@@ -54,8 +54,17 @@ exports.config = {
     capabilities: [{
         browserName: 'chrome',
         browserVersion: '122.0.6261.39',
-        acceptInsecureCerts: true
-    }],
+        acceptInsecureCerts: true,
+        // 'goog:chromeOptions': {
+        //     args: ['headless', 'disable-gpu']
+        // }
+     }
+    //{
+    //     browserName: 'firefox',
+    //     browserVersion: 'latest',
+    //     acceptInsecureCerts: true
+    // }
+    ],
 
     //
     // ===================
