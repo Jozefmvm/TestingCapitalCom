@@ -41,8 +41,8 @@ describe ('Header testing', function() {
 
 
     variantOfLicence.forEach(({country, language})=>{
-        it ('dddd', async ()=>{
-            await pageFactory.header.SelectCountryAndLanguage(variantOfLicence[0]);
+        it ('addd', async ()=>{
+            await pageFactory.header.SelectCountryAndLanguage(country,language);
 
         })
     })
