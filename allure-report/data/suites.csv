@@ -1,6 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sat Mar 09 21:19:27 MSK 2024","Sat Mar 09 21:19:27 MSK 2024","139","","Header testing","","","","Should be appropriate array size  hader on major page",""
-"passed","Sat Mar 09 21:19:27 MSK 2024","Sat Mar 09 21:19:29 MSK 2024","2230","","Header testing","","","","Should be appropriate link in browser line after click on Education ""https://capital.com/learn-to-trade""",""
-"broken","Sat Mar 09 21:19:30 MSK 2024","Sat Mar 09 21:19:31 MSK 2024","662","","Header testing","","","","dddd",""
-"passed","Sat Mar 09 21:19:21 MSK 2024","Sat Mar 09 21:19:27 MSK 2024","5724","","Header testing","","","","Should be appropriate link in browser line after change country to Brasil and licence text on page ""https://capital.com/ru?country=br""",""
-"passed","Sat Mar 09 21:19:16 MSK 2024","Sat Mar 09 21:19:21 MSK 2024","5092","","Header testing","","","","""before all"" hook for Header testing",""
