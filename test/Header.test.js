@@ -34,18 +34,18 @@ describe ('Header testing', function() {
     })
 
 
-    // let variantOfLicence = [
-    //     {country: 'pageFactory.header.brazilCountry', language: 'pageFactory.header.languageEn'},
-    //     {country: 'pageFactory.header.spainCountry', language: 'pageFactory.header.languageEn'}
-    // ];
+    let variantOfLicence = [
+        {country: 'pageFactory.header.brazilCountry', language: 'pageFactory.header.languageEn'},
+        {country: 'pageFactory.header.spainCountry', language: 'pageFactory.header.languageEn'}
+    ];
 
 
-    // variantOfLicence.forEach(({country, language})=>{
-    //     it ('dddd', async ()=>{
-    //         await pageFactory.header.SelectCountryAndLanguage(country,language);
+    variantOfLicence.forEach(({country, language})=>{
+        it ('dddd', async ()=>{
+            await pageFactory.header.SelectCountryAndLanguage(variantOfLicence[0]);
 
-    //     })
-    // })
+        })
+    })
 
 
 
