@@ -13,6 +13,16 @@ class Cryptocurrencies extends BasePage {
         return $('[class="signup-form"]');
     }
 
+
+    get loginLink(){
+        return $('.signup-form .l_btn_signup');
+    }
+
+
+    get checkBoxOnLoginForm(){
+        return $('.field .checkbox');
+    }
+
     
 
 

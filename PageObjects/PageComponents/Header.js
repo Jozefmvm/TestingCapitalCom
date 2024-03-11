@@ -14,6 +14,16 @@ class Header extends BasePage {
     }
 
 
+    get marketsLinkHeader(){
+        return $('[data-type="nav_id3"]');
+    }
+
+
+    get cryptocurrenciesMarketsHeader(){
+        return $('[data-type="nav_id65"]');
+    }
+
+
     get changeCountryAndLanguage(){
         return $('.licLangSw.js-licLangSw .licLangSw__btn.gI.gCenter.gXs.js-licLangSwBtn.js-countries');
     }
@@ -31,6 +41,11 @@ class Header extends BasePage {
 
     get spainCountry(){
         return $('[data-country="es"]');
+    }
+
+
+    get franceCountry(){
+        return $('[data-country="fr"]');
     }
 
 
@@ -78,14 +93,14 @@ class Header extends BasePage {
         await language.click();
     }
 
-    async fastSelect(country, language){
-        await this.changeCountryAndLanguage.click()
-        await this.changeCountry.click()
-        await country.click()
-        await this.changeCountryAndLanguage.click()
-        await this.changeCountry.click()
-        await language.click()
-    }
+    // async fastSelect(country, language){
+    //     await this.changeCountryAndLanguage.click()
+    //     await this.changeCountry.click()
+    //     await country.click()
+    //     await this.changeCountryAndLanguage.click()
+    //     await this.changeCountry.click()
+    //     await language.click()
+    // }
 
 
 
