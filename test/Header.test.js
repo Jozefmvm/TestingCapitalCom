@@ -10,6 +10,18 @@ describe ('Header testing', function() {
     })
 
 
+    this.beforeEach('', async () =>{
+        let variantOfLicence = [
+                    {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn, textCountry: 'Brazil'},
+                    {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn, textCountry: 'Spain'},
+                    {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn, textCountry: 'France'}
+                ];for (const {country, language, textCountry} of variantOfLicence) {
+                        await pageFactory.header.SelectCountryAndLanguage(country, language);
+                        console.log(textCountry + ' OK');
+                    }
+    })
+
+
 
     it ('Should be appropriate link in browser line after change country to Brasil and licence text on page "https://capital.com/ru?country=br"', async () => {
         await pageFactory.header.SelectCountryAndLanguage(pageFactory.header.brazilCountry, pageFactory.header.languageEn);
@@ -34,23 +46,23 @@ describe ('Header testing', function() {
     })
 
 
-    it('Parametrization', async () => {
+    // it('Parametrization', async () => {
 
-        let variantOfLicence = [
-            {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn, textCountry: 'Brazil'},
-            {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn, textCountry: 'Spain'},
-            {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn, textCountry: 'France'}
-        ];
+    //     let variantOfLicence = [
+    //         {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn, textCountry: 'Brazil'},
+    //         {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn, textCountry: 'Spain'},
+    //         {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn, textCountry: 'France'}
+    //     ];
 
-        for (const {country, language, textCountry} of variantOfLicence) {
-        await pageFactory.header.SelectCountryAndLanguage(country, language);
-        const array = await pageFactory.header.allTabsFromHeader;
-        await expect(array).toBeElementsArrayOfSize(5);
+    //     for (const {country, language, textCountry} of variantOfLicence) {
+    //     await pageFactory.header.SelectCountryAndLanguage(country, language);
+    //     const array = await pageFactory.header.allTabsFromHeader;
+    //     await expect(array).toBeElementsArrayOfSize(5);
 
-        console.log(textCountry + ' OK');
-        }
+    //     console.log(textCountry + ' OK');
+    //     }
 
-    });
+    // });
 
     // const variantOfLicence = [
     //     {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn},

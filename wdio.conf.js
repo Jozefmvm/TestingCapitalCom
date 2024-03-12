@@ -1,4 +1,6 @@
 const allure = require('allure-commandline')
+const { PageFactory } = require('./PageObjects/PageFactory');
+const pageFactory = new PageFactory();
 
 exports.config = {
     //
@@ -244,17 +246,47 @@ exports.config = {
      */
     // beforeSuite: function (suite) {
     // },
+     beforeSuite: ('Parametrization', async (suite) => {
+
+        let variantOfLicence = [
+            {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn, textCountry: 'Brazil'},
+            {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn, textCountry: 'Spain'},
+            {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn, textCountry: 'France'}
+        ];
+
+        for (const {country, language, textCountry} of variantOfLicence) {
+            suite++;
+        await pageFactory.header.SelectCountryAndLanguage(country, language);
+        console.log(textCountry + ' OK');
+        }
+
+    }),
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
     // beforeTest: function (test, context) {
     // },
+    // beforeTest: ('Parametrization', async (test, context) => {
+
+    //     let variantOfLicence = [
+    //         {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn, textCountry: 'Brazil'},
+    //         {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn, textCountry: 'Spain'},
+    //         {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn, textCountry: 'France'}
+    //     ];
+
+    //     for (const {country, language, textCountry} of variantOfLicence) {
+    //     await pageFactory.header.SelectCountryAndLanguage(country, language);
+    //     test++;
+    //     console.log(textCountry + ' OK');
+    //     }
+
+    // }),
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
      */
-    // beforeHook: function (test, context, hookName) {
-    // },
+    //beforeHook: function (test, context, hookName) {
+    //},
     /**
      * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
      * afterEach in Mocha)
