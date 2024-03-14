@@ -3,18 +3,12 @@ const pageFactory = new PageFactory();
 
 
 
-describe ('Header testing', function() {
-    // for (const {country, language} of variantOfLicence) {
-    //     it ('', async() => {
-    //         await pageFactory.header.SelectCountryAndLanguage(country, language);
-
-    //     })
-    // }
-
-
+describe ('Header testing', () => {
+    
     before('Navigate to the site and maximize window', async () => {
         await pageFactory.header.navigate('https://capital.com/');
         await browser.setWindowSize(1920, 1080);
+        await pageFactory.header.acceptAllButton.click();
     })
 
 
@@ -57,11 +51,11 @@ describe ('Header testing', function() {
 
     // });
 
-    let  variantOfLicence = [
-        {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn},
-        {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn},
-        {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn}
-    ];
+    // let  variantOfLicence = [
+    //     {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn},
+    //     {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn},
+    //     {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn}
+    // ];
 
 
 

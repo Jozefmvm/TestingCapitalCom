@@ -251,6 +251,21 @@ exports.config = {
      */
     // beforeTest: function (test, context) {
     // },
+    beforeTest: ('Parametrization', async (test) => {
+
+        let variantOfLicence = [
+            {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn, textCountry: 'Brazil'},
+            {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn, textCountry: 'Spain'},
+            {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn, textCountry: 'France'}
+        ];
+
+        for (const {country, language, textCountry} of variantOfLicence) {
+            test++;
+
+             await pageFactory.header.SelectCountryAndLanguage(country, language);
+        }
+
+    }),
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)

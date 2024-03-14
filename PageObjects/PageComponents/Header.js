@@ -74,6 +74,11 @@ class Header extends BasePage {
     }
 
 
+    get acceptAllButton(){
+        return $('.banner-actions-container #onetrust-accept-btn-handler'); 
+    }
+
+
     async ClickToElement(element) {
         await element.waitForClickable({ timeout: 5000 });
         await element.click()
@@ -101,6 +106,7 @@ class Header extends BasePage {
     //     await this.changeCountry.click()
     //     await language.click()
     // }
+
 
 
 
