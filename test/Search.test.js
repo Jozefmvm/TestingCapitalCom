@@ -7,6 +7,7 @@ describe ('Search component testing', function() {
     before('Navigate to the site and maximize window', async () => {
         await pageFactory.header.navigate('https://capital.com/');
         await browser.setWindowSize(1920, 1080);
+        await pageFactory.header.acceptAllButton.click();
     })
 
 

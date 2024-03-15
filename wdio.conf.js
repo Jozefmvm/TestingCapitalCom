@@ -254,12 +254,12 @@ exports.config = {
     beforeTest: ('Parametrization', async (test) => {
 
         let variantOfLicence = [
-            {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn, textCountry: 'Brazil'},
-            {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn, textCountry: 'Spain'},
-            {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn, textCountry: 'France'}
+            {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn},
+            {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn},
+            {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn}
         ];
 
-        for (const {country, language, textCountry} of variantOfLicence) {
+        for (const {country, language} of variantOfLicence) {
             test++;
 
              await pageFactory.header.SelectCountryAndLanguage(country, language);
