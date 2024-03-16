@@ -78,6 +78,10 @@ class Header extends BasePage {
         return $('.banner-actions-container #onetrust-accept-btn-handler'); 
     }
 
+    get currentCountry(){
+        return $('#selectedCountryName');
+    }
+
 
     async ClickToElement(element) {
         await element.waitForClickable({ timeout: 5000 });
