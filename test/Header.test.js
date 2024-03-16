@@ -22,18 +22,23 @@ describe ('Header testing', () => {
     // })
 
 
-    // it ('Should be appropriate array size  hader on major page', async () => {
-    //     const array = await pageFactory.header.allTabsFromHeader;
-    //     await expect(array).toBeElementsArrayOfSize(5);
-    // })
-
-
-
-    it ('Should be appropriate link in browser line after click on Education "https://capital.com/learn-to-trade"', async () => {
-        await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
-        const title = await browser.getUrl();
-        await expect(title).toEqual('https://capital.com/learn-to-trade');
+    it ('Should be appropriate array size  header on major page', async () => {
+        const array = await pageFactory.header.allTabsFromHeader;
+        await expect(array).toBeElementsArrayOfSize(5);
     })
+
+    it ('Should be appropriate logo no page', async () => {
+        await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
+        await expect(pageFactory.header.logoLinkHeader).toBeDisplayed();
+    })
+
+
+
+    // it ('Should be appropriate link in browser line after click on Education "https://capital.com/learn-to-trade"', async () => {
+    //     await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
+    //     const title = await browser.getUrl();
+    //     await expect(title).toEqual('https://capital.com/learn-to-trade');
+    // })
 
 
     // it('Parametrization', async () => {
@@ -57,8 +62,4 @@ describe ('Header testing', () => {
     //     {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn}
     // ];
 
-
-
-
-
-})
+});
