@@ -260,9 +260,8 @@ exports.config = {
     //     ];
 
     //     for (const {country, language} of variantOfLicence) {
-            
-    //          await pageFactory.header.SelectCountryAndLanguage(country, language);
-    //          context.test ++;
+    //         await pageFactory.header.SelectCountryAndLanguage(country, language);
+    //         describe.call();
            
     //     }
 

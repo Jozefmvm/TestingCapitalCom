@@ -54,8 +54,28 @@ class Header extends BasePage {
     }
 
 
+    get arabEmiratesCountry(){
+        return $('[data-country="ae"]');
+    }
+
+
+    get germanyCountry(){
+        return $('[data-country="de"]');
+    }
+
+
+    get australiaCountry(){
+        return $('[data-country="au"]');
+    }
+
+
+
     get languageEn(){
-        return $('[data-type="nav_lang_en"]');
+        return $('[class="iconMd flagMin flagMin--gb"]');
+    }
+
+    get languageDe(){
+        return $('[class="iconMd flagMin flagMin--de"]');
     }
 
 
@@ -101,17 +121,6 @@ class Header extends BasePage {
         await language.waitForClickable({ timeout: 5000 });
         await language.click();
     }
-
-    // async fastSelect(country, language){
-    //     await this.changeCountryAndLanguage.click()
-    //     await this.changeCountry.click()
-    //     await country.click()
-    //     await this.changeCountryAndLanguage.click()
-    //     await this.changeCountry.click()
-    //     await language.click()
-    // }
-
-
 
 
 

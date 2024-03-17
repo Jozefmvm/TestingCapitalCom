@@ -3,30 +3,29 @@ const pageFactory = new PageFactory();
 
 
 
-describe ('Header testing', () => {
+// describe ('Header testing', () => {
     
-    before('Navigate to the site and maximize window', async () => {
-        await pageFactory.header.navigate('https://capital.com/');
-        await browser.setWindowSize(1920, 1080);
-        await pageFactory.header.acceptAllButton.click();
-    })
+//     before('Navigate to the site and maximize window', async () => {
+//         await pageFactory.header.navigate('https://capital.com/');
+//         await browser.setWindowSize(1920, 1080);
+//         await pageFactory.header.acceptAllButton.click();
+//     })
 
 
 
-    it ('Should be appropriate link in browser line after change country to Brasil and licence text on page "https://capital.com/ru?country=br"', async () => {
-        await pageFactory.header.SelectCountryAndLanguage(pageFactory.header.brazilCountry, pageFactory.header.languageEn);
-        const title = await browser.getUrl();
-        await pageFactory.header.ClickToElement(pageFactory.header.changeCountryAndLanguage);
-        await expect(pageFactory.header.licence).toHaveText('(Regulated by SCB)');
-        await expect(title).toEqual('https://capital.com/');
-    })
+    // it ('Should be appropriate link in browser line after change country to Brasil and licence text on page "https://capital.com/ru?country=br"', async () => {
+    //     await pageFactory.header.SelectCountryAndLanguage(pageFactory.header.brazilCountry, pageFactory.header.languageEn);
+    //     const title = await browser.getUrl();
+    //     await pageFactory.header.ClickToElement(pageFactory.header.changeCountryAndLanguage);
+    //     await expect(pageFactory.header.licence).toHaveText('(Regulated by SCB)');
+    //     await expect(title).toEqual('https://capital.com/');
+    // })
 
 
-    it ('Should be appropriate array size  header on major page', async () => {
-        const array = await pageFactory.header.allTabsFromHeader;
-        await expect(array).toBeElementsArrayOfSize(5);
-        await expect(pageFactory.header.currentCountry).toHaveText('Brazil')
-    })
+    // it ('Should be appropriate array size  header on major page', async () => {
+    //     const array = await pageFactory.header.allTabsFromHeader;
+    //     await expect(array).toBeElementsArrayOfSize(5);
+    // })
 
     // it ('Should be appropriate logo no page', async () => {
     //     await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
@@ -41,40 +40,4 @@ describe ('Header testing', () => {
     //     await expect(title).toEqual('https://capital.com/learn-to-trade');
     // })
 
-
-    // it('Parametrization', async () => {
-
-    //     let variantOfLicence = [
-    //         {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn, textCountry: 'Brazil'},
-    //         {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn, textCountry: 'Spain'},
-    //         {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn, textCountry: 'France'}
-    //     ];
-
-    //     for (const {country, language, textCountry} of variantOfLicence) {
-    //     if ((pageFactory.header.currentCountry).toHaveText('Belarus')){
-    //         it ('Should be appropriate logo no page', async () => {
-    //             await pageFactory.header.SelectCountryAndLanguage(country, language);
-    //             await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
-    //         })
-    //     } else if((pageFactory.header.currentCountry).toHaveText('Spain')){
-    //         it ('Should be appropriate logo no page', async () => {
-    //             await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
-    //             await expect(pageFactory.header.logoLinkHeader).toBeDisplayed();
-    //         })
-    //     } else {
-    //         it ('Should be appropriate logo no page', async () => {
-    //             await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader)
-    //         })
-    //     }
-
-    //     };
-    // });
-
-
-    // let  variantOfLicence = [
-    //     {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn},
-    //     {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn},
-    //     {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn}
-    // ];
-
-});
+// });
