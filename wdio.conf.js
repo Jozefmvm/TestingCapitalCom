@@ -93,7 +93,7 @@ exports.config = {
     //
     // If you only want to run your tests until a specific amount of tests have failed use
     // bail (default is 0 - don't bail, run all tests).
-    bail: 1,
+    bail: 0,
     //
     // Set a base URL in order to shorten url command calls. If your `url` parameter starts
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
@@ -251,19 +251,19 @@ exports.config = {
      */
     // beforeTest: function (test, context) {
     // },
-    beforeTest: ('Parametrization', async (test, context) => {
+    // beforeTest: ('Parametrization', async (test, context) => {
 
-        let variantOfLicence = [
-            {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn},
-            {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn},
-            {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn}
-        ];
+    //     let variantOfLicence = [
+    //         {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn},
+    //         {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn},
+    //         {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn}
+    //     ];
 
-        for (const {country, language} of variantOfLicence) {
-            await pageFactory.header.SelectCountryAndLanguage(country, language);
-        }
+    //     for (const {country, language} of variantOfLicence) {
+    //         await pageFactory.header.SelectCountryAndLanguage(country, language);
+    //     }
 
-    }),
+    // }),
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
