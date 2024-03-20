@@ -24,15 +24,15 @@ describe ('Header testing', () => {
     // })
 
 
-    // it ('Should be appropriate array size  header on major page', async () => {
-    //     const array = await pageFactory.header.allTabsFromHeader;
-    //     await expect(array).toBeElementsArrayOfSize(5);
-    // })
+    it ('Should be appropriate array size  header on major page', async () => {
+        const array = await pageFactory.header.allTabsFromHeader;
+        await expect(array).toBeElementsArrayOfSize(5);
+    })
 
-    // it ('Should be appropriate logo no page', async () => {
-    //     await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
-    //     await expect(pageFactory.header.logoLinkHeader).toBeDisplayed();
-    // })
+    it ('Should be appropriate logo no page', async () => {
+        await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
+        await expect(pageFactory.header.logoLinkHeader).toBeDisplayed();
+    })
 
 
 
@@ -43,37 +43,37 @@ describe ('Header testing', () => {
     // })
 
 
-    it ('Parametrization', async () => {
+    // it ('Parametrization', async () => {
 
-        let variantOfLicence = [
-            {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn, textCountry: 'Brazil'},
-            {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn, textCountry: 'Spain'},
-            {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn, textCountry: 'France'}
-        ];
+    //     let variantOfLicence = [
+    //         {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn, textCountry: 'Brazil'},
+    //         {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn, textCountry: 'Spain'},
+    //         {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn, textCountry: 'France'}
+    //     ];
 
-        for (const {country, language, textCountry} of variantOfLicence) {
-            await pageFactory.header.SelectCountryAndLanguage(country, language);
-            if (textCountry === 'Brazil'){
-                    const array = await pageFactory.header.allTabsFromHeader;
-                    await expect(array).toBeElementsArrayOfSize(4);
-                    allureReporter.addFeature('Brazil')
-            }
-            else if (textCountry === 'Spain'){
-                    await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
-                    await expect(pageFactory.header.logoLinkHeader).toBeDisplayed()
-                    allureReporter.addFeature('Spain')
-            }
-            else if(textCountry === 'France'){
-                    await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
-                    await expect(pageFactory.header.logoLinkHeader).toBeDisplayed();
-                    allureReporter.addFeature('France')
-            }
-            else{
-                console.log('Bad')
-            }
-        }
+    //     for (const {country, language, textCountry} of variantOfLicence) {
+    //         await pageFactory.header.SelectCountryAndLanguage(country, language);
+    //         if (textCountry === 'Brazil'){
+    //                 allureReporter.addSubSuite('Brazil');
+    //                 const array = await pageFactory.header.allTabsFromHeader;
+    //                 await expect(array).toBeElementsArrayOfSize(5);
+    //         }
+    //         else if (textCountry === 'Spain'){
+    //                 await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
+    //                 await expect(pageFactory.header.logoLinkHeader).toBeDisplayed();
+    //                 allureReporter.addSubSuite('Spain');
+    //         }
+    //         else if(textCountry === 'France'){
+    //                 await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
+    //                 await expect(pageFactory.header.logoLinkHeader).toBeDisplayed();
+    //                 allureReporter.addSubSuite('France');
+    //         }
+    //         else{
+    //             console.log('Bad');
+    //         }
+    //     }
 
-    })
+    // })
 
 
 
