@@ -275,17 +275,20 @@ exports.config = {
         for (const {country, language, textCountry} of variantOfLicence) {
             await pageFactory.header.SelectCountryAndLanguage(country, language);
             if (textCountry === 'Brazil'){
-                this.test++;
+                test()++;
+                continue;
+                
             }
             else if (textCountry === 'Spain'){
-                this.test++;
- 
+                test()++;
+                continue;
             }
             else if(textCountry === 'France'){
-                this.test++;
-            }
+                test()++;
+                continue;
+            } 
             else{
-                console.log('Bad');
+                continue;
             }
         }
 
