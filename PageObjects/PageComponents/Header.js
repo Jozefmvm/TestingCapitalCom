@@ -69,18 +69,12 @@ class Header extends BasePage {
     }
 
 
-
     get languageEn(){
         return $('[class="iconMd flagMin flagMin--gb"]');
     }
 
     get languageDe(){
         return $('[class="iconMd flagMin flagMin--de"]');
-    }
-
-
-    get languageRu(){
-        return $('[class="iconMd flagMin flagMin--ru"]')
     }
 
 
@@ -98,8 +92,9 @@ class Header extends BasePage {
         return $('.banner-actions-container #onetrust-accept-btn-handler'); 
     }
 
+
     get currentCountry(){
-        return $('#selectedCountryName');
+        return $('small[class="js-currCountry"]');
     }
 
 

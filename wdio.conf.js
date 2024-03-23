@@ -60,12 +60,12 @@ exports.config = {
         // 'goog:chromeOptions': {
         //     args: ['headless', 'disable-gpu']
         // }
-     }
-    //{
+     },
+    //    {
     //     browserName: 'firefox',
     //     browserVersion: 'latest',
     //     acceptInsecureCerts: true
-    // }
+    //   }
     ],
 
     //
@@ -99,7 +99,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://localhost',
+    baseUrl:'http://localhost',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -233,6 +233,9 @@ exports.config = {
      */
     // before: function (capabilities, specs) {
     // },
+    // before: function(){
+    //     browser.url('https://capital.com/?country=tm');
+    // },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {string} commandName hook command name
@@ -264,35 +267,35 @@ exports.config = {
     //     }
 
     // }),
-    beforeTest: ('Parametrization', async (test) => {
+    // beforeTest: ('Parametrization', async (test) => {
 
-        let variantOfLicence = [
-            {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn, textCountry: 'Brazil'},
-            {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn, textCountry: 'Spain'},
-            {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn, textCountry: 'France'}
-        ];
+    //     let variantOfLicence = [
+    //         {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn, textCountry: 'Brazil'},
+    //         {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn, textCountry: 'Spain'},
+    //         {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn, textCountry: 'France'}
+    //     ];
 
-        for (const {country, language, textCountry} of variantOfLicence) {
-            await pageFactory.header.SelectCountryAndLanguage(country, language);
-            if (textCountry === 'Brazil'){
-                test()++;
-                continue;
+    //     for (const {country, language, textCountry} of variantOfLicence) {
+    //         await pageFactory.header.SelectCountryAndLanguage(country, language);
+    //         if (textCountry === 'Brazil'){
+    //             test()++;
+    //             continue;
                 
-            }
-            else if (textCountry === 'Spain'){
-                test()++;
-                continue;
-            }
-            else if(textCountry === 'France'){
-                test()++;
-                continue;
-            } 
-            else{
-                continue;
-            }
-        }
+    //         }
+    //         else if (textCountry === 'Spain'){
+    //             test()++;
+    //             continue;
+    //         }
+    //         else if(textCountry === 'France'){
+    //             test()++;
+    //             continue;
+    //         } 
+    //         else{
+    //             continue;
+    //         }
+    //     }
 
-    }),
+    // }),
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
