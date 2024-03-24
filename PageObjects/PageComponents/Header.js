@@ -4,6 +4,7 @@ const { BasePage } = require('../BasePage');
 class Header extends BasePage {
 
 
+
     get logoLinkHeader() {
         return $('.gI.gCenter.gXs .cc-header__logo');
     }
@@ -105,16 +106,13 @@ class Header extends BasePage {
 
 
     async SelectCountryAndLanguage(country, language){
-        await this.changeCountryAndLanguage.waitForClickable({ timeout: 5000 });
-        await this.changeCountryAndLanguage.click();
-        await this.changeCountry.waitForClickable({ timeout: 5000 });
-        await this.changeCountry.click();
-        await country.waitForClickable({ timeout:5000 });
-        await country.click();
-        await this.changeCountryAndLanguage.waitForClickable({ timeout:5000 });
-        await this.changeCountryAndLanguage.click();
-        await language.waitForClickable({ timeout: 5000 });
-        await language.click();
+
+        await this.changeCountryAndLanguage.click({ timeout:5000 });
+        await this.changeCountry.click({timeout:5000});
+        await country.click({ timeout:5000 });
+        await this.changeCountryAndLanguage.click({timeout:5000});
+        await language.click({timeout:5000});
+        
     }
 
 

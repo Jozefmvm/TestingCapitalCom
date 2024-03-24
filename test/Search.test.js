@@ -5,8 +5,7 @@ const pageFactory = new PageFactory();
 describe ('Search component testing', function() {
 
     before('Navigate to the site and maximize window', async () => {
-        await pageFactory.header.navigate('https://capital.com/de?country=de');
-        await browser.setWindowSize(1920, 1080);
+        await pageFactory.header.navigate('/');
         await pageFactory.header.acceptAllButton.click();
     })
 
