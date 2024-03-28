@@ -270,35 +270,39 @@ exports.config = {
     //     }
 
     // }),
-    // beforeTest: ('Parametrization', async (test) => {
+    beforeTest: ('Parametrization', async (test) => {
 
-    //     let variantOfLicence = [
-    //         {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn, textCountry: 'Brazil'},
-    //         {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn, textCountry: 'Spain'},
-    //         {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn, textCountry: 'France'}
-    //     ];
+        let variantOfLicence = [
+            {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn, textCountry: 'Brazil'},
+            {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn, textCountry: 'Spain'},
+            {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn, textCountry: 'France'}
+        ];
+        let num = 0;
 
-    //     for (const {country, language, textCountry} of variantOfLicence) {
-    //         await pageFactory.header.SelectCountryAndLanguage(country, language);
-    //         if (textCountry === 'Brazil'){
-    //             test()++;
-    //             continue;
+        for (const {country, language, textCountry} of variantOfLicence) {
+            await pageFactory.header.SelectCountryAndLanguage(country, language);
+            num++;
+            if (textCountry === 'Brazil'){
+                describe++
                 
-    //         }
-    //         else if (textCountry === 'Spain'){
-    //             test()++;
-    //             continue;
-    //         }
-    //         else if(textCountry === 'France'){
-    //             test()++;
-    //             continue;
-    //         } 
-    //         else{
-    //             continue;
-    //         }
-    //     }
+                
+            }
+            else if (textCountry === 'Spain'){
+                describe++
+                
+            }
+            else if(textCountry === 'France'){
+                describe++
+                
+            } 
+            else{
+                break;
+                
+            }
+        }
 
-    // }),
+    }),
+  
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
