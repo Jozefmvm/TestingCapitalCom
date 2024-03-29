@@ -283,16 +283,19 @@ exports.config = {
             await pageFactory.header.SelectCountryAndLanguage(country, language);
             num++;
             if (textCountry === 'Brazil'){
-                describe++
+                describe('Search component testing')
+                continue
                 
                 
             }
             else if (textCountry === 'Spain'){
-                describe++
+                describe('Search component testing')
+                continue
                 
             }
             else if(textCountry === 'France'){
-                describe++
+                describe('Search component testing')
+                continue
                 
             } 
             else{
