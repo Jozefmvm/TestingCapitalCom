@@ -26,7 +26,7 @@ class Header extends BasePage {
 
 
     get changeCountryAndLanguage(){
-        return $('.licLangSw.js-licLangSw .licLangSw__btn.gI.gCenter.gXs.js-licLangSwBtn.js-countries');
+        return $('div[class="licLangSw js-licLangSw"]');
     }
 
 
@@ -106,7 +106,7 @@ class Header extends BasePage {
 
 
     async SelectCountryAndLanguage(country, language){
-
+        
         await this.changeCountryAndLanguage.click({ timeout:5000 });
         await this.changeCountry.click({timeout:5000});
         await country.click({ timeout:5000 });

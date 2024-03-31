@@ -1,6 +1,4 @@
 const allure = require('allure-commandline')
-const { PageFactory } = require('./PageObjects/PageFactory');
-const pageFactory = new PageFactory();
 
 exports.config = {
     //
@@ -53,7 +51,8 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
+    capabilities: [
+        {
         browserName: 'chrome',
         browserVersion: '122.0.6261.39',
         acceptInsecureCerts: true,
@@ -61,11 +60,12 @@ exports.config = {
         //     args: ['headless', 'disable-gpu']
         // }
      },
-    //    {
+
+    //     {
     //     browserName: 'firefox',
     //     browserVersion: 'latest',
-    //     acceptInsecureCerts: true
-    //   }
+    //     //acceptInsecureCerts: true,
+    //  }
     ],
 
     //
@@ -164,7 +164,7 @@ exports.config = {
         return new Promise((resolve, reject) => {
             const generationTimeout = setTimeout(
                 () => reject(reportError),
-                5000)
+                10000)
 
             generation.on('exit', function(exitCode) {
                 clearTimeout(generationTimeout)
@@ -250,62 +250,13 @@ exports.config = {
     // beforeSuite: function (suite) {
     // },
     beforeSuite: async function (suite) {
-        await browser.setWindowSize(1920, 1070);
+        await browser.maximizeWindow();
     },
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
     // beforeTest: function (test, context) {
     // },
-    // beforeTest: ('Parametrization', async (test, context) => {
-
-    //     let variantOfLicence = [
-    //         {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn},
-    //         {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn},
-    //         {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn}
-    //     ];
-
-    //     for (const {country, language} of variantOfLicence) {
-    //         await pageFactory.header.SelectCountryAndLanguage(country, language);
-    //     }
-
-    // }),
-    beforeTest: ('Parametrization', async (test) => {
-
-        let variantOfLicence = [
-            {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn, textCountry: 'Brazil'},
-            {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn, textCountry: 'Spain'},
-            {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn, textCountry: 'France'}
-        ];
-        let num = 0;
-
-        for (const {country, language, textCountry} of variantOfLicence) {
-            await pageFactory.header.SelectCountryAndLanguage(country, language);
-            num++;
-            if (textCountry === 'Brazil'){
-                describe('Search component testing')
-                continue
-                
-                
-            }
-            else if (textCountry === 'Spain'){
-                describe('Search component testing')
-                continue
-                
-            }
-            else if(textCountry === 'France'){
-                describe('Search component testing')
-                continue
-                
-            } 
-            else{
-                break;
-                
-            }
-        }
-
-    }),
-  
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)

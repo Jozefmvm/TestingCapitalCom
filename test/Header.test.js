@@ -1,81 +1,49 @@
-// const { PageFactory } = require('../PageObjects/PageFactory');
-// const pageFactory = new PageFactory();
-// const allureReporter = require('@wdio/allure-reporter');
+const { PageFactory } = require('../PageObjects/PageFactory');
+const pageFactory = new PageFactory();
 
 
 
-
-// describe ('Header testing', () => {
-    
-//     before('Navigate to the site and maximize window', async () => {
-//         await pageFactory.header.navigate('/');
-//         await pageFactory.header.acceptAllButton.click();
-//     })
+describe('Capital', () => {
 
 
+    describe('Open homepage', () => {
 
-//     it ('Should be appropriate link in browser line after change country to Brasil and licence text on page "https://capital.com/ru?country=br"', async () => {
-//         await pageFactory.header.SelectCountryAndLanguage(pageFactory.header.brazilCountry, pageFactory.header.languageEn);
-//         const title = await browser.getUrl();
-//         await pageFactory.header.ClickToElement(pageFactory.header.changeCountryAndLanguage);
-//         await expect(pageFactory.header.licence).toHaveText('(Regulated by SCB)');
-//         await expect(title).toEqual('https://capital.com/');
-//     })
+        it('Navigate to the site and maximize window', async () => {
+            await pageFactory.header.navigate('/');
+            await pageFactory.header.acceptAllButton.click();
+        })
 
+    })
 
-//     it ('Should be appropriate array size  header on major page', async () => {
-//         const array = await pageFactory.header.allTabsFromHeader;
-//         await expect(array).toBeElementsArrayOfSize(5);
-//     })
+    let countries = ['Brazil','Spain','France']
+    let licences = ['(Regulated by SCB)','Cyprus / EU (Regulated by CYSEC)', 'Cyprus / EU (Regulated by CYSEC)']
 
-//     it ('Should be appropriate logo no page', async () => {
-//         await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
-//         await expect(pageFactory.header.logoLinkHeader).toBeDisplayed();
-//     })
+    for (let country of countries){
 
+        describe (`Header testing - ${country}`, () => {
 
+            it (`Should be appropriate name of licence in browser line after change country to ${country}`, async () => {
+                let index = countries.indexOf(country)
+                let variantOfLicence = [
+                    {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn},
+                    {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn},
+                    {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn}
+                ];
+                await pageFactory.header.SelectCountryAndLanguage(await variantOfLicence[index].country, await variantOfLicence[index].language);
+                await pageFactory.header.ClickToElement(pageFactory.header.changeCountryAndLanguage);
+                await expect(pageFactory.header.licence).toHaveText(licences[index]);
+            })
 
-//     // it ('Should be appropriate link in browser line after click on Education "https://capital.com/learn-to-trade"', async () => {
-//     //     await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
-//     //     const title = await browser.getUrl();
-//     //     await expect(title).toEqual('https://capital.com/learn-to-trade');
-//     // })
+            it ('Should be appropriate array size  header on major page', async () => {
+                const array = await pageFactory.header.allTabsFromHeader;
+                await expect(array).toBeElementsArrayOfSize(5);
+            })
 
+            it ('Should be appropriate logo no page', async () => {
+                await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
+                await expect(pageFactory.header.logoLinkHeader).toBeDisplayed();
+            })
 
-//      it ('Parametrization', async () => {
-
-//         let variantOfLicence = [
-//             {country: pageFactory.header.brazilCountry, language: pageFactory.header.languageEn, textCountry: 'Brazil'},
-//             {country: pageFactory.header.spainCountry, language: pageFactory.header.languageEn, textCountry: 'Spain'},
-//             {country: pageFactory.header.franceCountry, language: pageFactory.header.languageEn, textCountry: 'France'}
-//         ];
-
-//         for (const {country, language, textCountry} of variantOfLicence) {
-//             await pageFactory.header.SelectCountryAndLanguage(country, language);
-//             if (textCountry === 'Brazil'){
-//                     allureReporter.addSubSuite('Brazil');
-//                     const array = await pageFactory.header.allTabsFromHeader;
-//                     await expect(array).toBeElementsArrayOfSize(5);
-//             }
-//             else if (textCountry === 'Spain'){
-//                     await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
-//                     await expect(pageFactory.header.logoLinkHeader).toBeDisplayed();
-//                     allureReporter.addSubSuite('Spain');
-//             }
-//             else if(textCountry === 'France'){
-//                     allureReporter.addStep();
-//                     await pageFactory.header.ClickToElement(pageFactory.header.educationLinkHeader);
-//                     await expect(pageFactory.header.logoLinkHeader).toBeDisplayed();
-//                     allureReporter.addStep();
-//             }
-//             else{
-//                 console.log('Bad');
-//             }
-//         }
-
-//      })
-
-
-
-
-// });
+        })
+    }
+})
