@@ -106,13 +106,21 @@ class Header extends BasePage {
 
 
     async SelectCountryAndLanguage(country, language){
-        
+
+        await browser.pause(1000);
         await this.changeCountryAndLanguage.click({ timeout:5000 });
         await this.changeCountry.click({timeout:5000});
         await country.click({ timeout:5000 });
         await this.changeCountryAndLanguage.click({timeout:5000});
         await language.click({timeout:5000});
+        await browser.pause(1000);
         
+    }
+
+    async GoToCryptocurrencies(){
+        await this.marketsLinkHeader.waitForExist({timeout:5000});
+        await this.marketsLinkHeader.moveTo( 846, 59);
+        await this.cryptocurrenciesMarketsHeader.click({ timeout:5000 });
     }
 
 

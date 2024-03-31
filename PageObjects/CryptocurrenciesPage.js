@@ -28,7 +28,16 @@ class Cryptocurrencies extends BasePage {
         return $('.field .checkbox');
     }
 
-    
+
+    get closeSignFormButton(){
+        return $('[class="button-cleared small s_cancel"]');
+    }
+
+
+    get closeLoginFormButton(){
+        return $('[class="button-cleared small l_cancel"]');
+    }
+
 
 
 }

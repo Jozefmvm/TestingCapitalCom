@@ -64,7 +64,7 @@ exports.config = {
     //     {
     //     browserName: 'firefox',
     //     browserVersion: 'latest',
-    //     //acceptInsecureCerts: true,
+    //     acceptInsecureCerts: true,
     //  }
     ],
 
