@@ -23,6 +23,7 @@ describe('US_01.06', () => {
 
         describe (`US_01.06 - ${country}`, () => {
 
+
             it (`Should be appropriate name of licence in browser line after change country to ${country}`, async () => {
                 let index = countries.indexOf(country)
                 let variantOfLicence = [
@@ -35,6 +36,7 @@ describe('US_01.06', () => {
                 await expect(pageFactory.header.licence).toHaveText(licences[index]);
             })
 
+
             it(`US_01.06 ${country} Unregistered should be Sign Up form is opened`,async() =>{
                 await pageFactory.header.GoToCryptocurrencies();
                 await pageFactory.Cryptocurrencies.startTradingNowButton.click();
@@ -42,13 +44,18 @@ describe('US_01.06', () => {
                 await pageFactory.Cryptocurrencies.closeSignFormButton.click();
             })
 
+
             it(`US_01.06 ${country} Unregistered should be Login form is opened`,async() =>{
                 await pageFactory.Cryptocurrencies.startTradingNowButton.click();
                 await pageFactory.Cryptocurrencies.loginLink.click();
                 await expect(pageFactory.Cryptocurrencies.loginForm).toBeDisplayed();
                 await pageFactory.Cryptocurrencies.closeLoginFormButton.click();
+
             })
 
+
         })
+
     }
+    
 })

@@ -64,7 +64,10 @@ exports.config = {
     //     {
     //     browserName: 'firefox',
     //     browserVersion: 'latest',
-    //     acceptInsecureCerts: true,
+    //     "moz:firefoxOptions": {
+    //         "binary": "C:/Users/nikhil.sutaria/AppData/Local/Mozilla Firefox/firefox.exe"
+    //             }
+    // //     acceptInsecureCerts: true,
     //  }
     ],
 
