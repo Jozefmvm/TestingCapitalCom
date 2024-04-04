@@ -54,6 +54,14 @@ describe('US_01.06', () => {
             })
 
 
+            it(`US_01.06 ${country} log`,async() =>{
+                
+                await pageFactory.Login.LoggingFunction('murrrrrrr@mail.ru', '12340985432');
+                await pageFactory.Login.closeButtonLoginForm.click()
+
+            })
+
+
         })
 
     }

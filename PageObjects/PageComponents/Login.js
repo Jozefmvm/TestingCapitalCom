@@ -30,6 +30,11 @@ class Login extends BasePage {
     }
 
 
+    get closeButtonLoginForm(){
+        return $('[class="button-cleared small l_cancel"]');
+    }
+
+
     get emailFieldSign(){
         return $('[id="s_overlay-email"] [class="field__control"]');
     }
@@ -38,6 +43,21 @@ class Login extends BasePage {
     get passwordFieldSign(){
         return $('[id="s_overlay-pass"] [class="field__control"]');
     }
+
+
+   async LoggingFunction(email, password){
+
+    this.loginButtonHeader.waitForExist({timeout:5000});
+    this.loginButtonHeader.click();
+    this.emailFieldLogin.waitForExist({timeout:5000});
+    this.emailFieldLogin.setValue(email);
+    this.passwordFieldLogin.waitForExist({timeout:5000});
+    this.passwordFieldLogin.setValue(password);
+    this.continueButtonLoginSign.waitForExist({timeout:5000});
+    this.continueButtonLoginSign.click();
+    
+
+   }
 
 
 
