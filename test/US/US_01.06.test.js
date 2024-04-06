@@ -55,7 +55,7 @@ describe('US_01.06', () => {
 
 
             it(`US_01.06 ${country} log`,async() =>{
-                await pageFactory.Login.LoggingFunction('murvitalymvm@gmail.com', '01198925Capital!');
+                await pageFactory.Login.LoggingFunction('rvitaly', '19892');
                 //await pageFactory.Login.closeButtonLoginForm.click();
                 //await browser.pause(2000);
                 await expect (pageFactory.TradingPlatformPage.themeSwitherTradingPlatform).toBeDisplayed();
