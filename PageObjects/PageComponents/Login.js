@@ -47,14 +47,14 @@ class Login extends BasePage {
 
    async LoggingFunction(email, password){
 
-    this.loginButtonHeader.waitForExist({timeout:5000});
-    this.loginButtonHeader.click();
-    this.emailFieldLogin.waitForExist({timeout:5000});
-    this.emailFieldLogin.setValue(email);
-    this.passwordFieldLogin.waitForExist({timeout:5000});
-    this.passwordFieldLogin.setValue(password);
-    this.continueButtonLoginSign.waitForExist({timeout:5000});
-    this.continueButtonLoginSign.click();
+    await this.loginButtonHeader.waitForDisplayed({timeout:5000});
+    await this.loginButtonHeader.click();
+    await this.emailFieldLogin.waitForDisplayed({timeout:5000});
+    await this.emailFieldLogin.setValue(email);
+    await this.passwordFieldLogin.waitForDisplayed({timeout:5000});
+    await this.passwordFieldLogin.setValue(password);
+    await this.continueButtonLoginSign.waitForDisplayed({timeout:5000});
+    await this.continueButtonLoginSign.click();
     
 
    }

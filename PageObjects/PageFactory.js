@@ -1,7 +1,8 @@
 const { Header } = require('../PageObjects/PageComponents/Header');
 const { Search } = require('../PageObjects/PageComponents/SearchComponent');
 const { Cryptocurrencies } = require('../PageObjects/CryptocurrenciesPage');
-const { Login } = require('../PageObjects/PageComponents/Login')
+const { Login } = require('../PageObjects/PageComponents/Login');
+const { TradingPlatformPage } = require('../PageObjects/TradingPlatformPage');
 
 
 class PageFactory {
@@ -12,6 +13,7 @@ class PageFactory {
         this.Search = new Search();
         this.Cryptocurrencies = new Cryptocurrencies();
         this.Login = new Login();
+        this.TradingPlatformPage = new TradingPlatformPage();
     }
 }
 
