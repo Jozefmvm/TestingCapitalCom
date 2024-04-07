@@ -45,6 +45,16 @@ class Login extends BasePage {
     }
 
 
+    get popUpDemoButton(){
+        return $('[class="iconex-arrow-down-mini icon-square arrow-down"]');
+    }
+
+
+    get logoutButton(){
+        return $('[data-qa="logout"]');
+    }
+
+
    async LoggingFunction(email, password){
 
     await this.loginButtonHeader.waitForDisplayed({timeout:5000});
@@ -56,6 +66,16 @@ class Login extends BasePage {
     await this.continueButtonLoginSign.waitForDisplayed({timeout:5000});
     await this.continueButtonLoginSign.click();
     
+
+   }
+
+
+   async LogoutFunction(){
+
+    await this.popUpDemoButton.waitForDisplayed({timeout:5000});
+    await this.popUpDemoButton.click();
+    await this.logoutButton.waitForDisplayed({timeout:5000});
+    await this.logoutButton.click();
 
    }
 
