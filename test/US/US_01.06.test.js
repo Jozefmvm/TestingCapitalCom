@@ -50,12 +50,11 @@ describe('US_01.06', () => {
                 await pageFactory.Cryptocurrencies.loginLink.click();
                 await expect(pageFactory.Cryptocurrencies.loginForm).toBeDisplayed();
                 await pageFactory.Cryptocurrencies.closeLoginFormButton.click();
-
             })
 
 
             // it(`US_01.06 ${country} log`,async() =>{
-            //     await pageFactory.Login.LoggingFunction('murvitalymvm@gmail.com', '01198925Capital!');
+            //     await pageFactory.Login.LoggingFunction('vitalymvm@gmail.com', '925Capital!');
             //     //await pageFactory.Login.closeButtonLoginForm.click();
             //     await expect (pageFactory.TradingPlatformPage.themeSwitherTradingPlatform).toBeDisplayed();
             //     await pageFactory.Login.LogoutFunction();
