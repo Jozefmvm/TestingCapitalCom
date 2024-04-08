@@ -45,6 +45,11 @@ class Login extends BasePage {
     }
 
 
+    get modalIcon(){
+        return $('[class="iconex-close-small icon-square modal__header-btn"]');
+    }
+
+
     get popUpDemoButton(){
         return $('[class="iconex-arrow-down-mini icon-square arrow-down"]');
     }
@@ -65,7 +70,10 @@ class Login extends BasePage {
     await this.passwordFieldLogin.setValue(password);
     await this.continueButtonLoginSign.waitForDisplayed({timeout:5000});
     await this.continueButtonLoginSign.click();
-    
+     if (this.modalIcon.waitForDisplayed({timeout:5000})){
+        await this.modalIcon.click();
+    } else{
+    }
 
    }
 
