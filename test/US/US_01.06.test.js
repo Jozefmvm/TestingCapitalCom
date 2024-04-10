@@ -37,24 +37,37 @@ describe('US_01.06', () => {
             })
 
 
-            it(`US_01.06 ${country} Unregistered should be Sign Up form is opened`,async() =>{
+            it(`US_01.06!00_01 ${country} Unregistered user should be Sign Up form is opened after_Click button [Start Trading Now] `,async() =>{
+
                 await pageFactory.header.GoToCryptocurrencies();
                 await pageFactory.Cryptocurrencies.startTradingNowButton.click();
                 await expect(pageFactory.Cryptocurrencies.singUpForm).toBeDisplayed();
                 await pageFactory.Cryptocurrencies.closeSignFormButton.click();
+                await pageFactory.header.logoLinkHeader.click()
+                
             })
 
 
-            it(`US_01.06 ${country} Unregistered should be Login form is opened`,async() =>{
-                await pageFactory.Cryptocurrencies.startTradingNowButton.click();
-                await pageFactory.Cryptocurrencies.loginLink.click();
-                await expect(pageFactory.Cryptocurrencies.loginForm).toBeDisplayed();
-                await pageFactory.Cryptocurrencies.closeLoginFormButton.click();
+            it(`US_01.06!00_01 ${country} Authorized user user should be The trading platform page is opened after_Click button [Start Trading Now] `,async() =>{
+
+                await pageFactory.Login.LoggingFunction('vitmail.com', '198it');
+                await pageFactory.TradingPlatformPage.CloseModalIcon();
+                await expect(pageFactory.TradingPlatformPage.themeSwitherTradingPlatform).toBeDisplayed();
+                await pageFactory.Login.LogoutFunctionTrading();
+            
             })
+
+
+            // it(`US_01.06 ${country} Unregistered should be Login form is opened`,async() =>{
+            //     await pageFactory.Cryptocurrencies.startTradingNowButton.click();
+            //     await pageFactory.Cryptocurrencies.loginLink.click();
+            //     await expect(pageFactory.Cryptocurrencies.loginForm).toBeDisplayed();
+            //     await pageFactory.Cryptocurrencies.closeLoginFormButton.click();
+            // })
 
 
             // it(`US_01.06 ${country} log`,async() =>{
-            //     await pageFactory.Login.LoggingFunction('vitalymvm@gmail.com', '925Capital!');
+            //     await pageFactory.Login.LoggingFunction('murvitalymvm@gmail.com', '01198925Capital!');
             //     //await pageFactory.Login.closeButtonLoginForm.click();
             //     await expect (pageFactory.TradingPlatformPage.themeSwitherTradingPlatform).toBeDisplayed();
             //     await pageFactory.Login.LogoutFunction();

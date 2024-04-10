@@ -45,10 +45,6 @@ class Login extends BasePage {
     }
 
 
-    get modalIcon(){
-        return $('[class="iconex-close-small icon-square modal__header-btn"]');
-    }
-
 
     get popUpDemoButton(){
         return $('[class="iconex-arrow-down-mini icon-square arrow-down"]');
@@ -57,6 +53,16 @@ class Login extends BasePage {
 
     get logoutButton(){
         return $('[data-qa="logout"]');
+    }
+
+
+    get myAccountHeader(){
+        return $('[class="userProfile__btn gI gXs gCenter js-userProfile"]');
+    }
+
+
+    get logOutHeader(){
+        return $('[class="bg-container logout-user"]');
     }
 
 
@@ -70,15 +76,11 @@ class Login extends BasePage {
     await this.passwordFieldLogin.setValue(password);
     await this.continueButtonLoginSign.waitForDisplayed({timeout:5000});
     await this.continueButtonLoginSign.click();
-     if (this.modalIcon.waitForDisplayed({timeout:5000})){
-        await this.modalIcon.click();
-    } else{
-    }
-
+    
    }
 
 
-   async LogoutFunction(){
+   async LogoutFunctionTrading(){
 
     await this.popUpDemoButton.waitForDisplayed({timeout:5000});
     await this.popUpDemoButton.click();
@@ -86,6 +88,20 @@ class Login extends BasePage {
     await this.logoutButton.click();
 
    }
+
+
+   async LogoutFunctionHeader(){
+    
+    await this.myAccountHeader.waitForDisplayed({timeout:5000});
+    await this.myAccountHeader.click();
+    await this.logOutHeader.waitForDisplayed({timeout:5000});
+    await this.logOutHeader.click()
+    await this.loginButtonHeader.waitForDisplayed({timeout:5000})
+
+   }
+
+
+
 
 
 

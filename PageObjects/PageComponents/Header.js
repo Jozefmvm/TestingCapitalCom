@@ -31,7 +31,7 @@ class Header extends BasePage {
 
 
     get changeCountry(){
-        return $('.fieldDropdown.fieldDropdown--filter.fieldDropdown--lg.js-fieldDropdownFilter');
+        return $('[class="fieldDropdown fieldDropdown--filter fieldDropdown--lg js-fieldDropdownFilter"]');
     }
 
 
@@ -99,28 +99,37 @@ class Header extends BasePage {
     }
 
 
+
     async ClickToElement(element) {
+
         await element.waitForClickable({ timeout: 5000 });
         await element.click()
+        
     }
 
 
     async SelectCountryAndLanguage(country, language){
 
-        await browser.pause(1000);
-        await this.changeCountryAndLanguage.click({ timeout:5000 });
-        await this.changeCountry.click({timeout:5000});
-        await country.click({ timeout:5000 });
+        //await this.changeCountryAndLanguage.waitForDisplayed({timeout:5000});
         await this.changeCountryAndLanguage.click({timeout:5000});
+        //await this.changeCountry.waitForDisplayed({timeout:5000});
+        await this.changeCountry.click({timeout:5000});
+        //await country.waitForClickable({timeout:5000})
+        await country.click({timeout:5000});
+        //await this.changeCountryAndLanguage.waitForClickable({timeout:5000})
+        await this.changeCountryAndLanguage.click({timeout:5000});
+        //await language.waitForClickable({timeout:5000})
         await language.click({timeout:5000});
-        await browser.pause(1000);
         
     }
 
     async GoToCryptocurrencies(){
-        await this.marketsLinkHeader.waitForExist({timeout:5000});
+
+        //await this.marketsLinkHeader.waitForClickable({timeout:5000});
         await this.marketsLinkHeader.moveTo( 846, 59);
-        await this.cryptocurrenciesMarketsHeader.click({ timeout:5000 });
+        //await this.cryptocurrenciesMarketsHeader.waitForDisplayed({timeout:5000});
+        await this.cryptocurrenciesMarketsHeader.click({timeout:5000});
+    
     }
 
 
