@@ -58,12 +58,12 @@ describe('US_01.06', () => {
             })
 
 
-            // it(`US_01.06 ${country} Unregistered should be Login form is opened`,async() =>{
-            //     await pageFactory.Cryptocurrencies.startTradingNowButton.click();
-            //     await pageFactory.Cryptocurrencies.loginLink.click();
-            //     await expect(pageFactory.Cryptocurrencies.loginForm).toBeDisplayed();
-            //     await pageFactory.Cryptocurrencies.closeLoginFormButton.click();
-            // })
+            it(`US_01.06 ${country}  should be Login form is opened`,async() =>{
+                await pageFactory.Cryptocurrencies.startTradingNowButton.click();
+                await pageFactory.Cryptocurrencies.loginLink.click();
+                await expect(pageFactory.Cryptocurrencies.loginForm).toBeDisplayed();
+                await pageFactory.Cryptocurrencies.closeLoginFormButton.click();
+            })
 
 
             // it(`US_01.06 ${country} log`,async() =>{
