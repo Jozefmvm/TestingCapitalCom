@@ -70,12 +70,22 @@ class Header extends BasePage {
     }
 
 
+    get argentinaCountry(){
+        return $('[data-country="ar"]');
+    }
+
+
     get languageEn(){
         return $('[class="iconMd flagMin flagMin--gb"]');
     }
 
     get languageDe(){
         return $('[class="iconMd flagMin flagMin--de"]');
+    }
+
+
+    get languageAr(){
+        return $('[class="iconMd flagMin flagMin--ab"]');
     }
 
 

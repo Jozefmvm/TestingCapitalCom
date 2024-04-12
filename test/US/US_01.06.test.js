@@ -16,7 +16,7 @@ describe('US_01.06', () => {
 
     })
 
-    let countries = ['Germany','United Arab Emirates','Australia']
+    let countries = ['Germany','Arab Emirates','Australia']
     let licences = ['Cyprus / EU (Regulated by CYSEC)','(Regulated by SCB)', 'Australia (Regulated by ASIC)']
 
     for (let country of countries){
@@ -48,9 +48,9 @@ describe('US_01.06', () => {
             })
 
 
-            it(`US_01.06!00_01 ${country} Authorized user user should be The trading platform page is opened after_Click button [Start Trading Now] `,async() =>{
+            it(`US_01.06!00_01 ${country} Authorized user should be The trading platform page is opened after_Click button [Start Trading Now] `,async() =>{
 
-                await pageFactory.Login.LoggingFunction('vitmail.com', '198it');
+                await pageFactory.Login.LoggingFunction('murvitalymvm@gmail.com', '01198925Capital!');
                 await pageFactory.TradingPlatformPage.CloseModalIcon();
                 await expect(pageFactory.TradingPlatformPage.themeSwitherTradingPlatform).toBeDisplayed();
                 await pageFactory.Login.LogoutFunctionTrading();
@@ -58,11 +58,16 @@ describe('US_01.06', () => {
             })
 
 
-            it(`US_01.06 ${country}  should be Login form is opened`,async() =>{
+            it(`US_01.06!00_01 ${country} Unauthorized user should be Login form is opened`,async() =>{
+
+                await pageFactory.Login.LoggingFunction('murvitalymvm@gmail.com', '01198925Capital!');
+                await pageFactory.TradingPlatformPage.CloseModalIcon();
+                await pageFactory.Login.LogoutFunctionTrading();
+                await pageFactory.header.GoToCryptocurrencies();
                 await pageFactory.Cryptocurrencies.startTradingNowButton.click();
-                await pageFactory.Cryptocurrencies.loginLink.click();
-                await expect(pageFactory.Cryptocurrencies.loginForm).toBeDisplayed();
-                await pageFactory.Cryptocurrencies.closeLoginFormButton.click();
+                await expect(pageFactory.Cryptocurrencies.singUpForm).toBeDisplayed();
+                await pageFactory.Cryptocurrencies.closeSignFormButton.click();
+
             })
 
 
