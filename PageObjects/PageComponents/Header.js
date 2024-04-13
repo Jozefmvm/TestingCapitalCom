@@ -120,9 +120,9 @@ class Header extends BasePage {
 
     async SelectCountryAndLanguage(country, language){
 
-        //await this.changeCountryAndLanguage.waitForDisplayed({timeout:5000});
+        await this.changeCountryAndLanguage.waitForDisplayed({timeout:5000});
         await this.changeCountryAndLanguage.click({timeout:5000});
-        //await this.changeCountry.waitForDisplayed({timeout:5000});
+        await this.changeCountry.waitForDisplayed({timeout:5000});
         await this.changeCountry.click({timeout:5000});
         //await country.waitForClickable({timeout:5000})
         await country.click({timeout:5000});

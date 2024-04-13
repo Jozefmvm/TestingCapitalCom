@@ -7,17 +7,22 @@ class TradingPlatformPage extends BasePage {
     }
 
 
-    get modalIcon(){
+    get modalIconClose(){
         return $('[class="iconex-close-small icon-square modal__header-btn"]');
+    }
+
+
+    get modalIcon(){
+      return $('questionnaire-low-skilled [class="modal"]')
     }
 
 
     async CloseModalIcon(){
 
       try { 
-        await this.modalIcon.waitForExist({timeout:5000});
-         if (this.modalIcon.isDisplayed()){
-            this.modalIcon.click()
+        await this.modalIconClose.waitForExist({timeout:10000});
+         if (this.modalIconClose.isDisplayed()){
+            this.modalIconClose.click()
          }
         
       } catch (error) {

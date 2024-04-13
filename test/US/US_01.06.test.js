@@ -50,7 +50,7 @@ describe('US_01.06', () => {
 
             it(`US_01.06!00_01 ${country} Authorized user should be The trading platform page is opened after_Click button [Start Trading Now] `,async() =>{
 
-                await pageFactory.Login.LoggingFunction('murvi', '01198');
+                await pageFactory.Login.LoggingFunction('', '');
                 await pageFactory.TradingPlatformPage.CloseModalIcon();
                 await expect(pageFactory.TradingPlatformPage.themeSwitherTradingPlatform).toBeDisplayed();
                 await pageFactory.Login.LogoutFunctionTrading();
@@ -60,7 +60,7 @@ describe('US_01.06', () => {
 
             it(`US_01.06!00_01 ${country} Unauthorized user should be Login form is opened`,async() =>{
 
-                await pageFactory.Login.LoggingFunction('italm@l.com', '01198tal');
+                await pageFactory.Login.LoggingFunction('', '');
                 await pageFactory.TradingPlatformPage.CloseModalIcon();
                 await pageFactory.Login.LogoutFunctionTrading();
                 await pageFactory.header.GoToCryptocurrencies();
@@ -72,7 +72,7 @@ describe('US_01.06', () => {
 
 
             // it(`US_01.06 ${country} log`,async() =>{
-            //     await pageFactory.Login.LoggingFunction('murvitalymvm@gmail.com', '01198925Capital!');
+            //     await pageFactory.Login.LoggingFunction('', '');
             //     //await pageFactory.Login.closeButtonLoginForm.click();
             //     await expect (pageFactory.TradingPlatformPage.themeSwitherTradingPlatform).toBeDisplayed();
             //     await pageFactory.Login.LogoutFunction();
