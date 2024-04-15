@@ -26,7 +26,7 @@ class Header extends BasePage {
 
 
     get changeCountryAndLanguage(){
-        return $('div[class="licLangSw js-licLangSw"]');
+        return $('[class="licLangSw js-licLangSw"]');
     }
 
 
@@ -112,7 +112,7 @@ class Header extends BasePage {
 
     async ClickToElement(element) {
 
-        await element.waitForClickable({ timeout: 5000 });
+        await element.waitForExist({timeout: 10000});
         await element.click()
         
     }
@@ -120,25 +120,25 @@ class Header extends BasePage {
 
     async SelectCountryAndLanguage(country, language){
 
-        await this.changeCountryAndLanguage.waitForDisplayed({timeout:5000});
-        await this.changeCountryAndLanguage.click({timeout:5000});
-        await this.changeCountry.waitForDisplayed({timeout:5000});
-        await this.changeCountry.click({timeout:5000});
-        //await country.waitForClickable({timeout:5000})
-        await country.click({timeout:5000});
-        //await this.changeCountryAndLanguage.waitForClickable({timeout:5000})
-        await this.changeCountryAndLanguage.click({timeout:5000});
-        //await language.waitForClickable({timeout:5000})
-        await language.click({timeout:5000});
+        await this.changeCountryAndLanguage.waitForDisplayed({timeout:10000});
+        await this.changeCountryAndLanguage.click();
+        await this.changeCountry.waitForDisplayed({timeout:10000});
+        await this.changeCountry.click();
+        await country.waitForClickable({timeout:10000})
+        await country.click();
+        await this.changeCountryAndLanguage.waitForClickable({timeout:10000})
+        await this.changeCountryAndLanguage.click();
+        await language.waitForClickable({timeout:10000})
+        await language.click();
         
     }
 
     async GoToCryptocurrencies(){
 
-        //await this.marketsLinkHeader.waitForClickable({timeout:5000});
+        await this.marketsLinkHeader.waitForDisplayed({timeout:10000});
         await this.marketsLinkHeader.moveTo( 846, 59);
-        //await this.cryptocurrenciesMarketsHeader.waitForDisplayed({timeout:5000});
-        await this.cryptocurrenciesMarketsHeader.click({timeout:5000});
+        await this.cryptocurrenciesMarketsHeader.waitForClickable({timeout:10000});
+        await this.cryptocurrenciesMarketsHeader.click();
     
     }
 

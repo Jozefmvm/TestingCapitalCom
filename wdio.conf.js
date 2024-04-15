@@ -1,4 +1,5 @@
 const allure = require('allure-commandline')
+require('dotenv').config()
 
 exports.config = {
     //

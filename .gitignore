@@ -2,3 +2,5 @@
 /package-lock.json/
 /allure-report/
 /allure-results/
+/.env/
+

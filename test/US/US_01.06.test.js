@@ -50,7 +50,7 @@ describe('US_01.06', () => {
 
             it(`US_01.06!00_01 ${country} Authorized user should be The trading platform page is opened after_Click button [Start Trading Now] `,async() =>{
 
-                await pageFactory.Login.LoggingFunction('', '');
+                await pageFactory.Login.LoggingFunction(process.env.USEREMAIL, process.env.PASSWORD);
                 await pageFactory.TradingPlatformPage.CloseModalIcon();
                 await expect(pageFactory.TradingPlatformPage.themeSwitherTradingPlatform).toBeDisplayed();
                 await pageFactory.Login.LogoutFunctionTrading();
@@ -60,7 +60,7 @@ describe('US_01.06', () => {
 
             it(`US_01.06!00_01 ${country} Unauthorized user should be Login form is opened`,async() =>{
 
-                await pageFactory.Login.LoggingFunction('', '');
+                await pageFactory.Login.LoggingFunction(process.env.USEREMAIL, process.env.PASSWORD);
                 await pageFactory.TradingPlatformPage.CloseModalIcon();
                 await pageFactory.Login.LogoutFunctionTrading();
                 await pageFactory.header.GoToCryptocurrencies();
