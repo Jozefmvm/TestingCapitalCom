@@ -112,7 +112,7 @@ class Header extends BasePage {
 
     async ClickToElement(element) {
 
-        await element.waitForExist({timeout: 10000});
+        await element.waitForClickable({timeout: 10000});
         await element.click()
         
     }
@@ -124,7 +124,7 @@ class Header extends BasePage {
         await this.changeCountryAndLanguage.click();
         await this.changeCountry.waitForDisplayed({timeout:10000});
         await this.changeCountry.click();
-        await country.waitForClickable({timeout:10000})
+        await country.waitForDisplayed({timeout:10000})
         await country.click();
         await this.changeCountryAndLanguage.waitForClickable({timeout:10000})
         await this.changeCountryAndLanguage.click();
