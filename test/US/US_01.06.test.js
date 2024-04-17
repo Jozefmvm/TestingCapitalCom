@@ -32,7 +32,7 @@ describe('US_01.06', () => {
                     {country: pageFactory.header.australiaCountry, language: pageFactory.header.languageEn}
                 ];
                 await pageFactory.header.SelectCountryAndLanguage(await variantOfLicence[index].country, await variantOfLicence[index].language);
-                await pageFactory.header.ClickToElement(pageFactory.header.changeCountryAndLanguage);
+                await pageFactory.header.CheckLicence();
                 await expect(pageFactory.header.licence).toHaveText(licences[index]);
             })
 
@@ -70,15 +70,6 @@ describe('US_01.06', () => {
 
             })
 
-
-            // it(`US_01.06 ${country} log`,async() =>{
-            //     await pageFactory.Login.LoggingFunction('', '');
-            //     //await pageFactory.Login.closeButtonLoginForm.click();
-            //     await expect (pageFactory.TradingPlatformPage.themeSwitherTradingPlatform).toBeDisplayed();
-            //     await pageFactory.Login.LogoutFunction();
-
-
-            // })
 
 
         })

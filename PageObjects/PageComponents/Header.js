@@ -26,12 +26,12 @@ class Header extends BasePage {
 
 
     get changeCountryAndLanguage(){
-        return $('[class="licLangSw js-licLangSw"]');
+        return $('[class*="licL"][class*="licLangSw__btn"]');
     }
 
 
     get changeCountry(){
-        return $('[class="fieldDropdown fieldDropdown--filter fieldDropdown--lg js-fieldDropdownFilter"]');
+        return $('[class*="fieldDropdown"][class="fieldDropdown__control fieldDropdown__control--hidden"]');
     }
 
 
@@ -110,10 +110,10 @@ class Header extends BasePage {
 
 
 
-    async ClickToElement(element) {
-
-        await element.waitForClickable({timeout: 10000});
-        await element.click()
+    async CheckLicence() {
+        
+        await this.changeCountryAndLanguage.click({timeout:10000})
+        
         
     }
 
@@ -124,7 +124,7 @@ class Header extends BasePage {
         await this.changeCountryAndLanguage.click();
         await this.changeCountry.waitForDisplayed({timeout:10000});
         await this.changeCountry.click();
-        await country.waitForDisplayed({timeout:10000})
+        await country.waitForClickable({timeout:10000})
         await country.click();
         await this.changeCountryAndLanguage.waitForClickable({timeout:10000})
         await this.changeCountryAndLanguage.click();
