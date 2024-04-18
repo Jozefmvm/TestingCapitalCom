@@ -16,8 +16,8 @@ describe('US_01.06', () => {
 
     })
 
-    let countries = ['Germany','Arab Emirates','Australia']
-    let licences = ['Cyprus / EU (Regulated by CYSEC)','(Regulated by SCB)', 'Australia (Regulated by ASIC)']
+    let countries = ['Germany','Arab Emirates','Australia'];
+    let licences = ['Cyprus / EU (Regulated by CYSEC)','(Regulated by SCB)', 'Australia (Regulated by ASIC)'];
 
     for (let country of countries){
 

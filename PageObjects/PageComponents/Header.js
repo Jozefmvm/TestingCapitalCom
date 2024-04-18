@@ -89,6 +89,60 @@ class Header extends BasePage {
     }
 
 
+    get languageEl(){
+        return $('[class="iconMd flagMin flagMin--gr"]');
+    }
+
+
+    get languageEs(){
+        return $('[class="iconMd flagMin flagMin--es"]');
+    }
+    
+
+    get languageFr(){
+        return $('[class="iconMd flagMin flagMin--fr"]');
+    }
+
+
+    get languageIt(){
+        return $('[class="iconMd flagMin flagMin--it"]');
+    }
+
+
+    get languageHu(){
+        return $('[class="iconMd flagMin flagMin--hu"]');
+    }
+
+
+    get languageNl(){
+        return $('[class="iconMd flagMin flagMin--nl"]');
+    }
+
+
+    get languagePl(){
+        return $('[class="iconMd flagMin flagMin--pl"]');
+    }
+
+
+    get languageRo(){
+        return $('[class="iconMd flagMin flagMin--ro"]');
+    }
+
+
+    get languageRu(){
+        return $('[class="iconMd flagMin flagMin--ru"]');
+    }
+
+
+    get languageZn(){
+        return $('[class="iconMd flagMin flagMin--zn"]');
+    }
+
+    get languageCn(){
+        return $('[class="iconMd flagMin flagMin--cn"]');
+    }
+
+
     get licence(){
         return $('#licenseMessageSpan');
     }
@@ -109,10 +163,22 @@ class Header extends BasePage {
     }
 
 
+    get currentLanguage(){
+        return $('[class="licLangSw__loc textLeft stringEllipsed js-currLang"]');
+    }
+
+
+    async GetCurrentLanguageText(){
+
+        await this.currentLanguage.getText();
+        
+    }
+
+
 
     async CheckLicence() {
         
-        await this.changeCountryAndLanguage.click({timeout:10000})
+        await this.changeCountryAndLanguage.click()
         
         
     }
@@ -124,7 +190,7 @@ class Header extends BasePage {
         await this.changeCountryAndLanguage.click();
         await this.changeCountry.waitForDisplayed({timeout:10000});
         await this.changeCountry.click();
-        await country.waitForClickable({timeout:10000})
+        await country.waitForDisplayed({timeout:10000})
         await country.click();
         await this.changeCountryAndLanguage.waitForClickable({timeout:10000})
         await this.changeCountryAndLanguage.click();
