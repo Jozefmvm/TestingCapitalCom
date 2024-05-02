@@ -21,7 +21,7 @@ class Header extends BasePage {
 
 
     get cryptocurrenciesMarketsHeader(){
-        return $('[data-type="nav_id65"]');
+        return $('[class="grid gXs"] [data-type="nav_id65"]');
     }
 
 
@@ -190,7 +190,7 @@ class Header extends BasePage {
         await this.changeCountryAndLanguage.click();
         await this.changeCountry.waitForDisplayed({timeout:10000});
         await this.changeCountry.click();
-        await country.waitForDisplayed({timeout:10000})
+        await country.waitForClickable({timeout:10000})
         await country.click();
         await this.changeCountryAndLanguage.waitForClickable({timeout:10000})
         await this.changeCountryAndLanguage.click();

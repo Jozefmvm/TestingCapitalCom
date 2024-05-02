@@ -55,7 +55,7 @@ exports.config = {
     capabilities: [
         {
         browserName: 'chrome',
-        browserVersion: '122.0.6261.39',
+        browserVersion: 'latest',
         acceptInsecureCerts: true,
         // 'goog:chromeOptions': {
         //     args: ['headless', 'disable-gpu']
@@ -168,7 +168,7 @@ exports.config = {
         return new Promise((resolve, reject) => {
             const generationTimeout = setTimeout(
                 () => reject(reportError),
-                10000)
+                5000)
 
             generation.on('exit', function(exitCode) {
                 clearTimeout(generationTimeout)
