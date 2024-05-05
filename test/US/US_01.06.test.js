@@ -19,12 +19,14 @@ describe('US_01.06', () => {
     let countries = ['Germany','Arab Emirates','Australia'];
     let licences = ['Cyprus / EU (Regulated by CYSEC)','(Regulated by SCB)', 'Australia (Regulated by ASIC)'];
 
+
     for (let country of countries){
 
         describe (`US_01.06 - ${country}`, () => {
 
 
             it (`Should be appropriate name of licence in browser line after change country to ${country}`, async () => {
+
                 let index = countries.indexOf(country)
                 let variantOfLicence = [
                     {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageEn},
@@ -34,6 +36,7 @@ describe('US_01.06', () => {
                 await pageFactory.header.SelectCountryAndLanguage(await variantOfLicence[index].country, await variantOfLicence[index].language);
                 await pageFactory.header.CheckLicence();
                 await expect(pageFactory.header.licence).toHaveText(licences[index]);
+                
             })
 
 

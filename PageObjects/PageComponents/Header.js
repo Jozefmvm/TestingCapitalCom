@@ -179,8 +179,7 @@ class Header extends BasePage {
     async CheckLicence() {
         
         await this.changeCountryAndLanguage.click()
-        
-        
+          
     }
 
 
