@@ -175,7 +175,6 @@ class Header extends BasePage {
     }
 
 
-
     async CheckLicence() {
         
         await this.changeCountryAndLanguage.click()
@@ -198,6 +197,7 @@ class Header extends BasePage {
         
     }
 
+    
     async GoToCryptocurrencies(){
 
         await this.marketsLinkHeader.waitForDisplayed({timeout:10000});
