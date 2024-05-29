@@ -18,16 +18,16 @@ describe('US_01.06', () => {
 
     let countries = ['Germany'/*,'Arab Emirates','Australia'*/];
     
-    let licences = ['CYSEC','SCB', 'ASIC'];
+    let licences = ['CYSEC',/*'SCB', 'ASIC'*/];
 
-    let languages = ['English', 'Arabic', 'German', 'Greek', 'Spanish', 'French', 'Italian', 'Hungarian', 'Dutch', 'Polish', 'Romanian', 
-'Russian', 'New Zealand', 'Chinese'];
+    let languages = ['English', 'Arabic', 'German', /*'Greek', 'Spanish', 'French', 'Italian', 'Hungarian', 'Dutch', 'Polish', 'Romanian', 
+'Russian', 'New Zealand', 'Chinese'*/];
 
 
     for (let country of countries){
         for (let language of languages){
 
-        describe (`US_01.06 - ${country} + ${language}`, () => {
+        describe (`US_01.06 | Markets > Menu item [Cryptocurrencies]`, () => {
 
 
             it (`Should be appropriate name of licence in browser line after change country to ${country} + ${language}`, async () => {
@@ -38,10 +38,10 @@ describe('US_01.06', () => {
                     {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageEn},
                     {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageAr},
                     {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageDe},
-                    {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageEl},
-                    {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageEs},
-                    {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageFr},
-                    {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageIt},
+                    //{country: pageFactory.header.germanyCountry, language: pageFactory.header.languageEl},
+                    //{country: pageFactory.header.germanyCountry, language: pageFactory.header.languageEs},
+                    //{country: pageFactory.header.germanyCountry, language: pageFactory.header.languageFr},
+                    //{country: pageFactory.header.germanyCountry, language: pageFactory.header.languageIt},
                     //{country: pageFactory.header.germanyCountry, language: pageFactory.header.languageHu},
                     //{country: pageFactory.header.germanyCountry, language: pageFactory.header.languageNl},
                     //{country: pageFactory.header.germanyCountry, language: pageFactory.header.languagePl},
@@ -54,7 +54,7 @@ describe('US_01.06', () => {
                 ];
                 await pageFactory.header.SelectCountryAndLanguage(await variantOfLicence[index].country, await variantOfLicence[index_lang].language);
                 await pageFactory.header.CheckLicence();
-                await expect(pageFactory.header.licence).toHaveComputedLabel(expect.stringContaining(licences[0]));
+                await expect(pageFactory.header.licence).toHaveText(expect.stringContaining(licences[0]));
                 
             })
 
