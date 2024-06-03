@@ -1,5 +1,6 @@
 const { PageFactory } = require('../../PageObjects/PageFactory');
 const pageFactory = new PageFactory();
+const allureReporter = require('@wdio/allure-reporter');
 
 
 
@@ -28,10 +29,11 @@ describe('US_01.06', () => {
         for (let language of languages){
 
         describe (`US_01.06 | Markets > Menu item [Cryptocurrencies]`, () => {
+            
 
 
             it (`Should be appropriate name of licence in browser line after change country to ${country} + ${language}`, async () => {
-
+                
                 let index = countries.indexOf(country)
                 let index_lang = languages.indexOf(language)
                 let variantOfLicence = [
@@ -60,6 +62,7 @@ describe('US_01.06', () => {
 
 
             it(`US_01.06!00_01 ${country} + ${language} Unregistered user should be Sign Up form is opened after_Click button [Start Trading Now] `,async() =>{
+                allureReporter.addFeature('Unregistered user');
                 
                 await pageFactory.header.GoToCryptocurrencies();
                 await pageFactory.Cryptocurrencies.startTradingNowButton.click();
@@ -71,6 +74,7 @@ describe('US_01.06', () => {
 
 
             it(`US_01.06!00_01 ${country} + ${language}  Authorized user should be The trading platform page is opened after_Click button [Start Trading Now] `,async() =>{
+                allureReporter.addFeature('Authorized user');
                 
                 await pageFactory.Login.LoggingFunction(process.env.USEREMAIL, process.env.PASSWORD);
                 await pageFactory.TradingPlatformPage.CloseModalIcon();
@@ -81,6 +85,7 @@ describe('US_01.06', () => {
 
 
             it(`US_01.06!00_01 ${country} + ${language}  Unauthorized user should be Login form is opened`,async() =>{
+                allureReporter.addFeature('Unauthorized user');
                 
                 await pageFactory.Login.LoggingFunction(process.env.USEREMAIL, process.env.PASSWORD);
                 await pageFactory.TradingPlatformPage.CloseModalIcon();
