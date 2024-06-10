@@ -26,6 +26,7 @@ describe('US_01.06', () => {
 
 
     for (let country of countries){
+
         for (let language of languages){
 
         describe (`US_01.06 | Markets > Menu item [Cryptocurrencies]`, () => {
@@ -85,7 +86,7 @@ describe('US_01.06', () => {
 
 
             it(`US_01.06!00_01 ${country} + ${language}  Unauthorized user should be Login form is opened`,async() =>{
-                allureReporter.addFeature('Unauthorized user');
+                /*allureReporter.addFeature('Unauthorized user');*/
                 
                 await pageFactory.Login.LoggingFunction(process.env.USEREMAIL, process.env.PASSWORD);
                 await pageFactory.TradingPlatformPage.CloseModalIcon();
