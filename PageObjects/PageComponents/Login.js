@@ -47,7 +47,7 @@ class Login extends BasePage {
 
 
     get popUpDemoButton(){
-        return $('[class="iconex-arrow-down-mini icon-square arrow-down"]');
+        return $('[class="account"]');
     }
 
 
