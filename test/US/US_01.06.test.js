@@ -34,7 +34,7 @@ describe('US_01.06', () => {
 
 
             it (`Should be appropriate name of licence in browser line after change country to ${country} + ${language}`, async () => {
-                allureReporter.addSuite('Unregistered user');
+                //allureReporter.addSuite('Preconditions');
                 let index = countries.indexOf(country)
                 let index_lang = languages.indexOf(language)
                 let variantOfLicence = [
