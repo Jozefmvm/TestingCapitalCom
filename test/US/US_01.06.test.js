@@ -30,11 +30,10 @@ describe('US_01.06', () => {
         for (let language of languages){
 
         describe (`US_01.06 | Markets > Menu item [Cryptocurrencies]`, () => {
-            allureReporter.addParentSuite('Licences');
 
 
             it (`Should be appropriate name of licence in browser line after change country to ${country} + ${language}`, async () => {
-                //allureReporter.addSuite('Preconditions');
+                
                 let index = countries.indexOf(country)
                 let index_lang = languages.indexOf(language)
                 let variantOfLicence = [
@@ -55,6 +54,7 @@ describe('US_01.06', () => {
                     //{country: pageFactory.header.arabEmiratesCountry, language: pageFactory.header.languageEn},
                     //{country: pageFactory.header.australiaCountry, language: pageFactory.header.languageEn}
                 ];
+                
                 await pageFactory.header.SelectCountryAndLanguage(await variantOfLicence[index].country, await variantOfLicence[index_lang].language);
                 await pageFactory.header.CheckLicence();
                 await expect(pageFactory.header.licence).toHaveText(expect.stringContaining(licences[0]));
@@ -64,7 +64,6 @@ describe('US_01.06', () => {
 
             it(`US_01.06!00_01 ${country} + ${language} Unregistered user should be Sign Up form is opened after_Click button [Start Trading Now] `,async() =>{
                 allureReporter.addSubSuite("Unregistered");
-                
                 await pageFactory.header.GoToCryptocurrencies();
                 await pageFactory.Cryptocurrencies.startTradingNowButton.click();
                 await expect(pageFactory.Cryptocurrencies.singUpForm).toBeDisplayed();
@@ -76,7 +75,6 @@ describe('US_01.06', () => {
 
             it(`US_01.06!00_01 ${country} + ${language}  Authorized user should be The trading platform page is opened after_Click button [Start Trading Now] `,async() =>{
                 allureReporter.addSubSuite('Authorized user');
-                
                 await pageFactory.Login.LoggingFunction(process.env.USEREMAIL, process.env.PASSWORD);
                 await pageFactory.TradingPlatformPage.CloseModalIcon();
                 await expect(pageFactory.TradingPlatformPage.themeSwitherTradingPlatform).toBeDisplayed();
@@ -87,7 +85,6 @@ describe('US_01.06', () => {
 
             it(`US_01.06!00_01 ${country} + ${language}  Unauthorized user should be Login form is opened`,async() =>{
                 allureReporter.addSubSuite('Unauthorized user');
-                
                 await pageFactory.Login.LoggingFunction(process.env.USEREMAIL, process.env.PASSWORD);
                 await pageFactory.TradingPlatformPage.CloseModalIcon();
                 await pageFactory.Login.LogoutFunctionTrading();
