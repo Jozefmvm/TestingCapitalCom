@@ -55,7 +55,7 @@ describe('US_01.06', () => {
                     //{country: pageFactory.header.australiaCountry, language: pageFactory.header.languageEn}
                 ];
                 
-                await pageFactory.header.SelectCountryAndLanguage(await variantOfLicence[index].country, await variantOfLicence[index_lang].language);
+                await pageFactory.header.NewChangeCountry(await variantOfLicence[index].country, await variantOfLicence[index_lang].language);
                 await pageFactory.header.CheckLicence();
                 await expect(pageFactory.header.licence).toHaveText(expect.stringContaining(licences[0]));
                 

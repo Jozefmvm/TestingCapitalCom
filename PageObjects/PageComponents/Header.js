@@ -182,20 +182,20 @@ class Header extends BasePage {
     }
 
 
-    async SelectCountryAndLanguage(country, language){
+    // async SelectCountryAndLanguage(country, language){
 
-        await this.changeCountryAndLanguage.waitForDisplayed({timeout:10000});
-        await this.changeCountryAndLanguage.click();
-        await this.changeCountry.waitForDisplayed({timeout:10000});
-        await this.changeCountry.click();
-        await country.waitForClickable({timeout:10000})
-        await country.click();
-        await this.changeCountryAndLanguage.waitForClickable({timeout:10000})
-        await this.changeCountryAndLanguage.click();
-        await language.waitForClickable({timeout:10000})
-        await language.click();
+    //     await this.changeCountryAndLanguage.waitForDisplayed({timeout:10000});
+    //     await this.changeCountryAndLanguage.click();
+    //     await this.changeCountry.waitForDisplayed({timeout:10000});
+    //     await this.changeCountry.click();
+    //     await country.waitForClickable({timeout:10000})
+    //     await country.click();
+        // await this.changeCountryAndLanguage.waitForClickable({timeout:10000})
+        // await this.changeCountryAndLanguage.click();
+        // await language.waitForClickable({timeout:10000})
+        // await language.click();
         
-    }
+    // }
 
     
     async GoToCryptocurrencies(){
@@ -205,6 +205,46 @@ class Header extends BasePage {
         await this.cryptocurrenciesMarketsHeader.waitForClickable({timeout:10000});
         await this.cryptocurrenciesMarketsHeader.click();
     
+    }
+
+    async NewChangeCountry(country, language){
+        try{
+            await this.changeCountryAndLanguage.waitForDisplayed({timeout:10000});
+            await this.changeCountryAndLanguage.click();
+            await this.changeCountry.waitForDisplayed({timeout:10000});
+            await this.changeCountry.click();
+            await country.waitForClickable({timeout:10000})
+            await country.click();
+            if(country===this.currentCountry){
+                console.log("cool")
+            }
+            else {
+            await this.changeCountryAndLanguage.waitForDisplayed({timeout:10000});
+            await this.changeCountryAndLanguage.click();
+            await this.changeCountry.waitForDisplayed({timeout:10000});
+            await this.changeCountry.click();
+            await country.waitForClickable({timeout:10000})
+            await country.click();
+            }
+            await this.changeCountryAndLanguage.waitForClickable({timeout:10000})
+            await this.changeCountryAndLanguage.click();
+            await language.waitForClickable({timeout:10000})
+            await language.click();
+            if(language===this.currentLanguage){
+                console.log("cool")
+            }
+            else{
+            await this.changeCountryAndLanguage.waitForClickable({timeout:10000})
+            await this.changeCountryAndLanguage.click();
+            await language.waitForClickable({timeout:10000})
+            await language.click();
+            }
+            
+
+        }
+        catch(error){
+            console.log(`${error}`)
+        }
     }
 
 
