@@ -20,7 +20,7 @@ class TradingPlatformPage extends BasePage {
     async CloseModalIcon(){
 
       try { 
-        await this.modalIconClose.waitForExist({timeout:10000});
+        await this.modalIconClose.waitForExist({timeout:20000});
          if (this.modalIconClose.isDisplayed()){
             this.modalIconClose.click()
          }
