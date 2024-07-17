@@ -40,19 +40,19 @@ describe('US_01.06', () => {
                     {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageEn},
                     {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageAr},
                     {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageDe},
-                    //{country: pageFactory.header.germanyCountry, language: pageFactory.header.languageEl},
-                    //{country: pageFactory.header.germanyCountry, language: pageFactory.header.languageEs},
-                    //{country: pageFactory.header.germanyCountry, language: pageFactory.header.languageFr},
-                    //{country: pageFactory.header.germanyCountry, language: pageFactory.header.languageIt},
-                    //{country: pageFactory.header.germanyCountry, language: pageFactory.header.languageHu},
-                    //{country: pageFactory.header.germanyCountry, language: pageFactory.header.languageNl},
-                    //{country: pageFactory.header.germanyCountry, language: pageFactory.header.languagePl},
-                    //{country: pageFactory.header.germanyCountry, language: pageFactory.header.languageRo},
-                    //{country: pageFactory.header.germanyCountry, language: pageFactory.header.languageRu},
-                    //{country: pageFactory.header.germanyCountry, language: pageFactory.header.languageZn},
-                    //{country: pageFactory.header.germanyCountry, language: pageFactory.header.languageCn},
-                    //{country: pageFactory.header.arabEmiratesCountry, language: pageFactory.header.languageEn},
-                    //{country: pageFactory.header.australiaCountry, language: pageFactory.header.languageEn}
+                    {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageEl},
+                    {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageEs},
+                    {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageFr},
+                    {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageIt},
+                    {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageHu},
+                    {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageNl},
+                    {country: pageFactory.header.germanyCountry, language: pageFactory.header.languagePl},
+                    {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageRo},
+                    {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageRu},
+                    {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageZn},
+                    {country: pageFactory.header.germanyCountry, language: pageFactory.header.languageCn},
+                    {country: pageFactory.header.arabEmiratesCountry, language: pageFactory.header.languageEn},
+                    {country: pageFactory.header.australiaCountry, language: pageFactory.header.languageEn}
                 ];
                 
                 await pageFactory.header.NewChangeCountry(await variantOfLicence[index].country, await variantOfLicence[index_lang].language);
