@@ -71,6 +71,12 @@ describe('US_01.06', () => {
                 await pageFactory.header.logoLinkHeader.click();
                 //await browser.deleteCookies()
                 //await pageFactory.header.acceptAllButton.click();
+                const testCookie = await browser.getCookies();
+                await browser.setCookies({
+                    name: '__cp_ln',
+                    value: 'de'
+                });
+                console.log(testCookie);
                 
             })
 
