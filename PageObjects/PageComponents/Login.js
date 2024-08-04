@@ -72,8 +72,10 @@ class Login extends BasePage {
     await this.loginButtonHeader.click();
     await this.emailFieldLogin.waitForDisplayed({timeout:5000});
     await this.emailFieldLogin.setValue(email);
+    await browser.pause(1500);
     await this.passwordFieldLogin.waitForDisplayed({timeout:5000});
     await this.passwordFieldLogin.setValue(password);
+    await browser.pause(1500);
     await this.continueButtonLoginSign.waitForDisplayed({timeout:5000});
     await this.continueButtonLoginSign.click();
     
@@ -82,6 +84,7 @@ class Login extends BasePage {
 
    async LogoutFunctionTrading(){
 
+    await browser.pause(1500);
     await this.popUpDemoButton.waitForDisplayed({timeout:5000});
     await this.popUpDemoButton.click();
     await this.logoutButton.waitForDisplayed({timeout:5000});
@@ -92,6 +95,7 @@ class Login extends BasePage {
 
    async LogoutFunctionHeader(){
     
+    await browser.pause(1500);
     await this.myAccountHeader.waitForDisplayed({timeout:5000});
     await this.myAccountHeader.click();
     await this.logOutHeader.waitForDisplayed({timeout:5000});

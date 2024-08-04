@@ -16,6 +16,7 @@ class Search extends BasePage{
     }
 
     async SearchSomething(value){
+        
         await this.searchButton.waitForClickable({timeout:3000});
         await this.searchButton.click();
         await this.searchButton.setValue(value);
