@@ -195,7 +195,7 @@ class Header extends BasePage {
 
     async NewChangeCountry(country, language){
         try{
-            await browser.pause(1500);
+            
             await this.changeCountryAndLanguage.waitForDisplayed({timeout:10000});
             await this.changeCountryAndLanguage.click();
             await this.changeCountry.waitForDisplayed({timeout:10000});
@@ -206,7 +206,7 @@ class Header extends BasePage {
                 console.log("cool")
             }
             else {
-            await browser.pause(1500);
+            await browser.pause(2000);
             await this.changeCountryAndLanguage.waitForDisplayed({timeout:10000});
             await this.changeCountryAndLanguage.click();
             await this.changeCountry.waitForDisplayed({timeout:10000});
@@ -214,7 +214,7 @@ class Header extends BasePage {
             await country.waitForClickable({timeout:10000})
             await country.click();
             }
-            await browser.pause(1500);
+            await browser.pause(2000);
             await this.changeCountryAndLanguage.waitForClickable({timeout:10000})
             await this.changeCountryAndLanguage.click();
             await language.waitForClickable({timeout:10000})
@@ -223,7 +223,7 @@ class Header extends BasePage {
                 console.log("cool")
             }
             else{
-            await browser.pause(1500);  
+            await browser.pause(2000);  
             await this.changeCountryAndLanguage.waitForClickable({timeout:10000})
             await this.changeCountryAndLanguage.click();
             await language.waitForClickable({timeout:10000})

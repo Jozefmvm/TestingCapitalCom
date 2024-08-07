@@ -19,7 +19,7 @@ describe('US_01.06', () => {
 
     let countries = ['Germany'/*,'Arab Emirates','Australia'*/];
     
-    let licences = ['CYSEC',/*'SCB', 'ASIC'*/];
+    let licences = ['CYSEC','SCB', 'ASIC'];
 
     let languages = ['English', 'Arabic', 'German', /*'Greek', 'Spanish', 'French', 'Italian', 'Hungarian', 'Dutch', 'Polish', 'Romanian', 
 'Russian', 'New Zealand', 'Chinese'*/];
@@ -63,25 +63,19 @@ describe('US_01.06', () => {
 
 
             it(`US_01.06!00_01 ${country} + ${language} Unregistered user should be Sign Up form is opened after_Click button [Start Trading Now] `,async() =>{
+                
                 allureReporter.addSubSuite("Unregistered");
                 await pageFactory.header.GoToCryptocurrencies();
                 await pageFactory.Cryptocurrencies.startTradingNowButton.click();
                 await expect(pageFactory.Cryptocurrencies.singUpForm).toBeDisplayed();
                 await pageFactory.Cryptocurrencies.closeSignFormButton.click();
                 await pageFactory.header.logoLinkHeader.click();
-                //await browser.deleteCookies()
-                //await pageFactory.header.acceptAllButton.click();
-                const testCookie = await browser.getCookies();
-                await browser.setCookies({
-                    name: '__cp_ln',
-                    value: 'de'
-                });
-                console.log(testCookie);
                 
             })
 
 
             it(`US_01.06!00_01 ${country} + ${language}  Authorized user should be The trading platform page is opened after_Click button [Start Trading Now] `,async() =>{
+                
                 allureReporter.addSubSuite('Authorized user');
                 await pageFactory.Login.LoggingFunction(process.env.USEREMAIL, process.env.PASSWORD);
                 await pageFactory.TradingPlatformPage.CloseModalIcon();
@@ -92,6 +86,7 @@ describe('US_01.06', () => {
 
 
             it(`US_01.06!00_01 ${country} + ${language}  Unauthorized user should be Login form is opened`,async() =>{
+                
                 allureReporter.addSubSuite('Unauthorized user');
                 await pageFactory.Login.LoggingFunction(process.env.USEREMAIL, process.env.PASSWORD);
                 await pageFactory.TradingPlatformPage.CloseModalIcon();
